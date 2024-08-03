@@ -1,0 +1,40 @@
+version: '3.8'  # Utilizza una versione più recente di Docker Compose
+
+services:
+  server:
+    image: redash/preview:24.08.1-dev
+    container_name: redash_server
+    restart: always
+    ports:
+      - "5000:5000"  # Esponi la porta 5000 per l'interfaccia web
+    environment:
+      REDASH_DATABASE_URL: postgresql+psycopg2://redash:redash@postgres/redash  # Connessione al database PostgreSQL
+      REDASH_REDIS_URL: redis://redis:6379/0  # Connessione a Redis
+      REDASH_COOKIE_SECRET: p9D8k$zW5X!qT7cYfEb2R@nL4aJ6hG1
+      REDASH_SECRET_KEY:  s3C7v%aU4N#pL6bXjMd1K@rW2hQ5gF9
+      # ... altre variabili d'ambiente (vedi sotto)
+    depends_on:
+      - postgres
+      - redis
+  
+  postgres:
+    image: postgres:14-alpine  # Utilizza un'immagine leggera di PostgreSQL
+    container_name: redash_postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: redash
+      POSTGRES_DB: redash
+      POSTGRES_USER: redash
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persistenza dei dati del database
+
+  redis:
+    image: redis:6-alpine  # Utilizza un'immagine leggera di Redis
+    container_name: redash_redis
+    restart: always
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postgres_data:
+  redis_data:
