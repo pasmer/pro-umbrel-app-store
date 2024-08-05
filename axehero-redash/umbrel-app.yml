@@ -1,7 +1,7 @@
 manifestVersion: 1
 id: axehero-redash
 name: Redash
-tagline: Replace this tagline with your app's tagline
+tagline: Your personal Data Science platform
 icon: https://svgur.com/i/mvA.svg
 category: Data Science
 version: "1.0.0"
