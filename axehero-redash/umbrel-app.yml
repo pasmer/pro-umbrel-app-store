@@ -3,7 +3,7 @@ id: axehero-redash
 name: Redash
 tagline: Replace this tagline with your app's tagline
 icon: https://svgur.com/i/mvA.svg
-category: Development
+category: Data Science
 version: "1.0.0"
 port: 5000
 description: >-
@@ -15,9 +15,9 @@ description: >-
 developer: Umbrel
 website: https://umbrel.com
 submitter: Axehero
-submission: https://github.com/getumbrel/umbrel-hello-world-app
-repo: https://github.com/getumbrel/umbrel-hello-world-app
-support: https://github.com/getumbrel/umbrel-hello-world-app/issues
+submission: 
+repo: 
+support: 
 gallery:
   - https://i.imgur.com/yyVG0Jb.jpeg
   - https://i.imgur.com/yyVG0Jb.jpeg

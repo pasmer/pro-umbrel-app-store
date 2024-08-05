@@ -2,7 +2,7 @@ version: '3.8'  # Utilizza una versione più recente di Docker Compose
 
 services:
   server:
-    image: redash/preview:24.08.1-dev
+    image: redash/redash:preview
     container_name: redash_server
     restart: always
     ports:
@@ -18,7 +18,7 @@ services:
       - redis
   
   postgres:
-    image: postgres:14-alpine  # Utilizza un'immagine leggera di PostgreSQL
+    image: arm64v8/postgres:12-alpine  # Utilizza un'immagine leggera di PostgreSQL
     container_name: redash_postgres
     restart: always
     environment:
