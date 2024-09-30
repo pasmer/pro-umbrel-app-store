@@ -2,15 +2,15 @@ manifestVersion: 1
 id: axehero-redash
 name: Redash
 tagline: Your personal Data Science platform
-icon: https://svgur.com/i/mvA.svg
+icon: https://svgshare.com/i/1AuL.svg
 category: Data Science
 version: "1.0.0"
 port: 5000
 description: >-
-  Add your app's description here.
+  Redash is a user-friendly data visualization and analytics tool that helps teams explore, query, and visualize data from various sources.
+  With an intuitive SQL editor, users can create custom queries, generate interactive dashboards, and share insights in real-time.
 
-
-  You can also add newlines!
+  Supporting multiple data sources like PostgreSQL, MySQL, and Google BigQuery, Redash makes data-driven decision-making accessible to both technical and non-technical users.
 
 developer: Umbrel
 website: https://umbrel.com
@@ -19,11 +19,14 @@ submission:
 repo: 
 support: 
 gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://imgur.com/a/U6sGTgI
+  - https://imgur.com/JDE4MaH
+  - https://imgur.com/quagQ5H
 releaseNotes: >-
-  Add what's new in the latest version of your app here.
+  The latest Redash release (v10.1.0) includes important security fixes and improvements.
+  It addresses three key vulnerabilities: insecure default configuration (if `REDASH_COOKIE_SECRET` is not explicitly set), an SSRF vulnerability in installations with URL-loading data sources, and an OAuth issue related to Google Login.
+  Additionally, several bug fixes and updates from version 10.0 are included.
+  This release ensures a more secure environment and smoother functionality for users upgrading from previous versions.
 dependencies: []
 path: ""
 defaultUsername: ""
