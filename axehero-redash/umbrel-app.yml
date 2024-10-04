@@ -19,9 +19,9 @@ submission:
 repo: 
 support: 
 gallery:
-  - https://imgur.com/a/U6sGTgI
-  - https://imgur.com/JDE4MaH
-  - https://imgur.com/quagQ5H
+  - https://i.imgur.com/bb9HlpF.png
+  - https://i.imgur.com/JDE4MaH.jpeg
+  - https://i.imgur.com/quagQ5H.png
 releaseNotes: >-
   The latest Redash release (v10.1.0) includes important security fixes and improvements.
   It addresses three key vulnerabilities: insecure default configuration (if `REDASH_COOKIE_SECRET` is not explicitly set), an SSRF vulnerability in installations with URL-loading data sources, and an OAuth issue related to Google Login.
