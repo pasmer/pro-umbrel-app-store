@@ -1,0 +1,27 @@
+manifestVersion: 1
+id: axehero-phpmyadmin
+name: PhpMyAdmin
+tagline: Database management tool
+icon: https://jmp.sh/A5jQpvZF
+category: Database
+version: "1.0.0"
+port: 9855:80
+description: >-
+  Des.
+
+developer: Umbrel
+website: https://umbrel.com
+submitter: Axehero
+submission: 
+repo: 
+support: 
+gallery:
+  - https://www.phpmyadmin.net/static/images/screenshots/structure.png
+  - https://www.phpmyadmin.net/static/images/screenshots/monitor.png
+  - https://www.phpmyadmin.net/static/images/screenshots/designer.png
+releaseNotes: >-
+  Release .
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

@@ -1,0 +1,11 @@
+version: '3.8'  
+
+services:
+    phpmyadmin:
+        image: phpmyadmin:5.2.1-fpm-alpine
+        container_name: phpmyadmin
+        environment:
+            - PMA_ARBITRARY=1
+        ports:
+            - 9855:80
+        restart: always
