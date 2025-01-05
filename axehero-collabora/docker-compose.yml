@@ -1,0 +1,14 @@
+version: '3.8'  
+
+services:
+    code:
+        tty: true
+        ports:
+            - 9980:9980
+        environment:
+            - domain=cloud\\.merella\\.it
+            - extra_params=--o:ssl.enable=true
+        restart: always
+        cap_add:
+            - SYS_ADMIN
+        image: collabora/code

@@ -1,0 +1,27 @@
+manifestVersion: 1
+id: axehero-collabora
+name: Collabora
+tagline: Your personal Data Science platform
+icon: https://svgshare.com/i/1AuL.svg
+category: Data Science
+version: "1.0.0"
+port: 5000
+description: >-
+  Des.
+
+developer: Umbrel
+website: https://umbrel.com
+submitter: Axehero
+submission: 
+repo: 
+support: 
+gallery:
+  - https://i.imgur.com/bb9HlpF.png
+  - https://i.imgur.com/JDE4MaH.jpeg
+  - https://i.imgur.com/quagQ5H.png
+releaseNotes: >-
+  Release .
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
