@@ -7,5 +7,7 @@ services:
         environment:
             - PMA_ARBITRARY=1
             - APACHE_SERVER_NAME=umbrel.local
+            - PMA_FORCE_SSL=false
+        ports:
             - 9855:80
         restart: always
