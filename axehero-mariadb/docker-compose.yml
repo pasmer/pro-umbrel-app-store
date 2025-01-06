@@ -11,7 +11,7 @@ services:
     volumes:
       - ${APP_DATA_DIR}/dbfile:/var/lib/mysql
     environment:
-      - MARIADB_ROOT_PASSWORD=ChangeMe
+      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD:-ChangeMe}
     networks:
       - umbrel_main_network
 
