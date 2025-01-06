@@ -1,0 +1,27 @@
+manifestVersion: 1
+id: axehero-mariadb
+name: MariaDB
+tagline: MariaDB is a community-developed, commercially supported fork of the MySQL relational database management system.
+icon: https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/fd9fec19c191f9b7f6f108098c858ae9bdc65ca7/axehero-phpmyadmin/PhpMyAdmin.png
+category: Database
+version: "1.0.1"
+port: 9306
+description: >-
+  Des.
+
+developer: Umbrel
+website: https://umbrel.com
+submitter: Axehero
+submission: 
+repo: 
+support: 
+gallery:
+  - https://www.phpmyadmin.net/static/images/screenshots/structure.png
+  - https://www.phpmyadmin.net/static/images/screenshots/monitor.png
+  - https://www.phpmyadmin.net/static/images/screenshots/designer.png
+releaseNotes: >-
+  Release .
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
