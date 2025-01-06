@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
     phpmyadmin:
-        image: phpmyadmin:5.2.1-fpm-alpine
+        image: phpmyadmin
         container_name: phpmyadmin
         environment:
             - PMA_ARBITRARY=1
