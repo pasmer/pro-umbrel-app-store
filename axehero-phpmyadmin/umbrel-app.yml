@@ -4,7 +4,7 @@ name: PhpMyAdmin
 tagline: Database management tool
 icon: https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/fd9fec19c191f9b7f6f108098c858ae9bdc65ca7/axehero-phpmyadmin/PhpMyAdmin.png
 category: Database
-version: "1.0.4"
+version: "1.0.5"
 port: 9855
 description: >-
   Des.
