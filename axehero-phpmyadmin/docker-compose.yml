@@ -6,6 +6,6 @@ services:
         container_name: phpmyadmin
         environment:
             - PMA_ARBITRARY=1
-        ports:
+            - APACHE_SERVER_NAME=umbrel.local
             - 9855:80
         restart: always
