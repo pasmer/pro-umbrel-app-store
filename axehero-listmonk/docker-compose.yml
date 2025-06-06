@@ -24,8 +24,7 @@ services:
       - LISTMONK_db__password=listmonk
       - LISTMONK_db__database=listmonk
       - LISTMONK_db__port=5432
-      # Opzionale: imposta admin user/password al primo avvio
-      - LISTMONK_admin__username=admin
-      - LISTMONK_admin__password=admin
     volumes:
       - ${APP_DATA_DIR}/listmonk:/listmonk/data
+    command: sh -c "./listmonk --install --yes && ./listmonk"
+    restart: always
