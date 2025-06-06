@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: listmonk
+      POSTGRES_PASSWORD: listmonk
+      POSTGRES_DB: listmonk
+    volumes:
+      - ${APP_DATA_DIR}/postgres:/var/lib/postgresql/data
+
+  app:
+    image: listmonk/listmonk:latest
+    depends_on:
+      - db
+    ports:
+      - "9000:9000"
+    environment:
+      - LISTMONK_app__address=0.0.0.0:9000
+      - LISTMONK_db__host=db
+      - LISTMONK_db__user=listmonk
+      - LISTMONK_db__password=listmonk
+      - LISTMONK_db__database=listmonk
+      - LISTMONK_db__port=5432
+      # Opzionale: imposta admin user/password al primo avvio
+      - LISTMONK_admin__username=admin
+      - LISTMONK_admin__password=admin
+    volumes:
+      - ${APP_DATA_DIR}/listmonk:/listmonk/data

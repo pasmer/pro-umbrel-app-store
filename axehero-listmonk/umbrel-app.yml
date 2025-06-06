@@ -1,0 +1,26 @@
+manifestVersion: 1
+id: listmonk
+category: productivity
+name: Listmonk
+version: "2.5.1"
+tagline: Gestione mailing list e newsletter self-hosted
+description: >-
+  Listmonk è una piattaforma open-source per la gestione di mailing list e l'invio di newsletter.
+releaseNotes: >-
+  Prima versione per Umbrel.
+developer: knadh
+website: https://listmonk.app
+repo: https://github.com/knadh/listmonk
+support: https://github.com/knadh/listmonk/issues
+port: 9000
+manifestVersion: 1
+id: listmonk
+# ...altri campi...
+icon: https://cdn.zeabur.com/listmonk.svg
+gallery:
+  - 1.jpg
+  - 2.jpg
+path: ""
+defaultUsername: "admin"
+defaultPassword: "admin"
+submitter: pasmer
