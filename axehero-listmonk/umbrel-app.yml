@@ -13,9 +13,6 @@ website: https://listmonk.app
 repo: https://github.com/knadh/listmonk
 support: https://github.com/knadh/listmonk/issues
 port: 9000
-manifestVersion: 1
-id: listmonk
-# ...altri campi...
 icon: https://cdn.zeabur.com/listmonk.svg
 gallery:
   - 1.jpg
