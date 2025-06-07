@@ -24,6 +24,7 @@ services:
       - LISTMONK_db__password=listmonk
       - LISTMONK_db__database=listmonk
       - LISTMONK_db__port=5432
+      - PROXY_AUTH_ADD='false'
     volumes:
       - ${APP_DATA_DIR}/listmonk:/listmonk/data
     command: sh -c "./listmonk --install --yes && ./listmonk"
