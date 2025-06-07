@@ -18,6 +18,6 @@ gallery:
   - 1.jpg
   - 2.jpg
 path: ""
-defaultUsername: "admin"
-defaultPassword: "admin"
+defaultUsername: ""
+defaultPassword: ""
 submitter: pasmer
