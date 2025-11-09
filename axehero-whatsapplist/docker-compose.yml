@@ -4,6 +4,8 @@ services:
   whatsapplist:
     image: pasmer/whatsapplist:latest
     container_name: whatsapplist
+    user: "1000:1000"
+    init: true
     restart: unless-stopped
     ports:
       - "7676:7676"
