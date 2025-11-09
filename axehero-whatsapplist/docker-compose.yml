@@ -1,31 +1,25 @@
-version: "3.7"
+version: '3.8'
 
 services:
-  whatsapp-app:
+  whatsapplist:
     image: whatsapp_msg-whatsapp-app:latest
-    container_name: axehero-whatsapplist_whatsapp-app_1
+    container_name: whatsapplist
+    restart: unless-stopped
     ports:
       - "7676:7676"
-
     volumes:
       # Persistenza sessione WhatsApp
       - ${APP_DATA_DIR}/wwebjs_auth:/app/.wwebjs_auth
-
       # Persistenza dei CSV caricati
       - ${APP_DATA_DIR}/uploads:/app/uploads
-
     environment:
       - NODE_ENV=production
       - PORT=7676
       # Configurazione Puppeteer (usa Chromium di sistema)
       - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
       - PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
-
     # Shared memory necessaria per Chromium (evita crash)
     shm_size: '2gb'
-
-    restart: unless-stopped
-
     # Healthcheck per verificare lo stato del container
     healthcheck:
       test: ["CMD", "node", "-e", "require('http').get('http://localhost:7676/api/status', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
@@ -33,10 +27,15 @@ services:
       timeout: 10s
       start_period: 60s
       retries: 3
-
     # Logging
     logging:
       driver: "json-file"
       options:
         max-size: "10m"
         max-file: "3"
+    networks:
+      - umbrel_main_network
+
+networks:
+  umbrel_main_network:
+    external: true
