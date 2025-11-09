@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   whatsapplist:
-    image: whatsapp_msg-whatsapp-app:latest
+    image: pasmer/whatsapplist:latest
     container_name: whatsapplist
     restart: unless-stopped
     ports:
