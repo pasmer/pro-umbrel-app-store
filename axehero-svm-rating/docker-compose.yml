@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.8"
 
 services:
   rating-svm-web:
@@ -6,10 +6,6 @@ services:
     container_name: rating-svm-web
     restart: unless-stopped
     ports:
-      - "8000:8000
+      - "8000:8000"
     networks:
       - umbrel_main_network
-
-networks:
-  umbrel_main_network:
-    external: true
