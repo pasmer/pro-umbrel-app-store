@@ -2,12 +2,17 @@ version: "3.7"
 
 services:
   app:
-    image: rating-svm-web
+    image: pasmer/rating-svm-web:1.0.0
     restart: on-failure
     stop_grace_period: 1m
     # Ports are managed by Umbrel via the 'port' field in umbrel-app.yml
     # but the container must expose it or we trust the internal network.
     # Typically we don't map ports here to avoid host conflicts.
+    ports:
+      - "7676:7676"
     networks:
-      default:
-        ipv4_address: $APP_IP
+      - umbrel_main_network
+
+networks:
+  umbrel_main_network:
+    external: true
