@@ -1,0 +1,40 @@
+manifestVersion: 1
+id: axehero-whatsapplist
+category: communication
+name: WhatsappList
+version: "1.0.0"
+tagline: Invio massivo di messaggi WhatsApp con CSV
+description: >-
+  WhatsappList è un'applicazione per l'invio massivo di messaggi WhatsApp.
+
+  Permette di caricare file CSV con elenchi di contatti e inviare messaggi
+  personalizzati in modo automatizzato. Utilizza whatsapp-web.js per
+  l'integrazione con WhatsApp Web.
+
+  Caratteristiche principali:
+  - Invio massivo di messaggi da file CSV
+  - Gestione sessione WhatsApp persistente
+  - Interfaccia web semplice e intuitiva
+  - Supporto per Chromium/Puppeteer
+
+releaseNotes: >-
+  Prima versione per Umbrel App Store.
+
+  Funzionalità:
+  - Caricamento file CSV con contatti
+  - Invio messaggi personalizzati
+  - Persistenza sessione WhatsApp
+
+developer: pasmer
+website: https://github.com/pasmer
+repo: https://github.com/pasmer/whatsapp-bulk-sender
+support: https://github.com/pasmer/whatsapp-bulk-sender/issues
+port: 7676
+icon: https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg
+gallery:
+  - https://i.imgur.com/yyVG0Jb.jpeg
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: pasmer
+submission: https://github.com/pasmer/whatsapp-bulk-sender
