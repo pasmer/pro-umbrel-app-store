@@ -1,0 +1,24 @@
+manifestVersion: 1
+id: axehero-rating-svm-web
+category: Finance
+name: CreditRating PMI
+version: "1.0.0"
+description: "Stima Rating Creditizio PMI tramite algoritmo Machine Learning SVM."
+developer: "Pasquale Merella"
+website: "https://www.merella.it"
+support: "https://www.merella.it"
+repo: "https://github.com/pasmer/pro-umbrel-app-store"
+port: 8000
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+releaseNotes: >-
+  Release iniziale dell'applicazione di stima rating creditizio.
+permissions: []
+dependencies: []
+submitter: "Pasquale Merella"
+submission: "https://github.com/pasmer/pro-umbrel-app-store"
