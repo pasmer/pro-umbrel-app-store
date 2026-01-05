@@ -5,14 +5,12 @@ services:
     image: pasmer/rating-svm-web:1.0.0
     container_name: rating-svm-web
     restart: unless-stopped
+    ports:
+      - "8000:8000" # riesponi le porte
+    environment:
+      - APP_PROXY=false
     networks:
       - umbrel_main_network
-    # rimuovi l'esposizione diretta delle porte
-
-  app_proxy:
-    environment:
-      APP_HOST: rating-svm-web
-      APP_PORT: 8000
 
 networks:
   umbrel_main_network:

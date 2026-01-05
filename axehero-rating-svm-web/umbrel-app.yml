@@ -8,8 +8,10 @@ developer: "Pasquale Merella"
 website: "https://www.merella.it"
 support: "https://www.merella.it"
 repo: "https://github.com/pasmer/pro-umbrel-app-store"
+icon: "axehero-rating-svm-web/rating.png"
 port: 8000
 path: ""
+torOnly: false 
 defaultUsername: ""
 defaultPassword: ""
 gallery:
