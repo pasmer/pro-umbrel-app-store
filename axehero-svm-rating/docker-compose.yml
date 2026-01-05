@@ -9,7 +9,7 @@ services:
     # but the container must expose it or we trust the internal network.
     # Typically we don't map ports here to avoid host conflicts.
     ports:
-      - "7676:7676"
+      - "8000:8000"
     networks:
       - umbrel_main_network
 
