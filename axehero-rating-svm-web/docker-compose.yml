@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   rating-svm-web:
-    image: pasmer/rating-svm-web:1.0.0
+    image: pasmer/rating-svm-web:1.0.1
     container_name: rating-svm-web
     restart: unless-stopped
     ports:
