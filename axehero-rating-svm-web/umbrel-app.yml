@@ -2,7 +2,7 @@ manifestVersion: 1
 id: axehero-rating-svm-web
 category: Finance
 name: CreditRating PMI
-version: "1.0.0"
+version: "1.0.1"
 description: "Stima Rating Creditizio PMI tramite algoritmo Machine Learning SVM."
 developer: "Pasquale Merella"
 website: "https://www.merella.it"
