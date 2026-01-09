@@ -2,7 +2,7 @@ manifestVersion: 1
 id: axehero-portainer
 category: developer
 name: Portainer
-icon: "https://ibb.co/0pk7N7H"
+icon: "https://i.ibb.co/mrmjsjfd/Portainer-icon.png"
 version: "2.33.6"
 tagline: Run custom Docker containers on your Umbrel
 description: >-
