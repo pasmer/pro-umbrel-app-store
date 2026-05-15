@@ -1,0 +1,29 @@
+manifestVersion: 1
+id: axehero-covid19-dashboard
+category: Analytics
+name: Italy COVID-19 Dashboard
+version: "1.0.0"
+description: >-
+  Dashboard interattiva per l'analisi dell'andamento epidemico COVID-19 in Italia.
+  Visualizza traiettorie regionali, mappe geografiche e trend temporali tramite Shiny (R)
+  con interfaccia web moderna.
+developer: "Pasquale Merella"
+website: "https://www.merella.it"
+support: "https://www.merella.it"
+repo: "https://github.com/pasmer/italy_dash"
+icon: "https://raw.githubusercontent.com/pasmer/italy_dash/master/figures/dash1.JPG"
+port: 8100
+path: ""
+torOnly: false
+defaultUsername: ""
+defaultPassword: ""
+gallery:
+  - https://raw.githubusercontent.com/pasmer/italy_dash/master/figures/dash1.JPG
+  - https://raw.githubusercontent.com/pasmer/italy_dash/master/figures/dash2.JPG
+releaseNotes: >-
+  Release iniziale della dashboard COVID-19 Italia su UmbrelOS.
+  Visualizzazione interattiva tramite R Shiny con wrapper web Flask su porta 8100.
+permissions: []
+dependencies: []
+submitter: "Pasquale Merella"
+submission: "https://github.com/pasmer/pro-umbrel-app-store"

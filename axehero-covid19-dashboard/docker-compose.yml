@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  italy-dash:
+    image: pasmer/italy-dash:1.0.0
+    container_name: italy-dash
+    restart: unless-stopped
+    ports:
+      - "3838:3838"
+    volumes:
+      - ${APP_DATA_DIR:-./data}/shiny_data:/srv/shiny-server/italy_dash/data
+      - ${APP_DATA_DIR:-./data}/shiny_logs:/var/log/shiny-server
+    environment:
+      - TZ=Europe/Rome
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:3838/"]
+      interval: 30s
+      timeout: 15s
+      retries: 3
+      start_period: 120s
+    networks:
+      - umbrel_main_network
+
+  italy-dash-web:
+    image: pasmer/italy-dash-web:1.0.0
+    container_name: italy-dash-web
+    restart: unless-stopped
+    ports:
+      - "8100:8100"
+    environment:
+      - TZ=Europe/Rome
+    depends_on:
+      - italy-dash
+    networks:
+      - umbrel_main_network
+
+networks:
+  umbrel_main_network:
+    external: true
