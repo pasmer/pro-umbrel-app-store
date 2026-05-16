@@ -2,13 +2,14 @@ version: "3.8"
 
 services:
   app:
-    image: pasmer/italy-dash-web:1.0.0
+    image: pasmer/italy-dash-web:2.0.0
     container_name: italy-dash-web
     restart: unless-stopped
     ports:
       - "8100:8100"
     environment:
       - TZ=Europe/Rome
+      - APP_PROXY=false
     networks:
       - umbrel_main_network
 
