@@ -14,11 +14,11 @@ website: https://github.com/diegosouzapw/OmniRoute
 repo: https://github.com/diegosouzapw/OmniRoute
 support: https://github.com/diegosouzapw/OmniRoute/issues
 port: 20128
-icon: https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/refs/heads/master/axehero-omniroute/omniroute.png
+icon: "https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/refs/heads/master/axehero-omniroute/omniroute.png"
 gallery:
-  - https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/refs/heads/master/axehero-omniroute/1.png
-  - https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/refs/heads/master/axehero-omniroute/2.png
-  - https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/refs/heads/master/axehero-omniroute/3.png
+  - "https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/refs/heads/master/axehero-omniroute/1.png"
+  - "https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/refs/heads/master/axehero-omniroute/2.png"
+  - "https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/refs/heads/master/axehero-omniroute/3.png"
 releaseNotes: >-
   Initial release for AxeHero App Store.
 dependencies: []
