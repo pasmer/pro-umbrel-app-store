@@ -14,7 +14,7 @@ website: https://github.com/diegosouzapw/OmniRoute
 repo: https://github.com/diegosouzapw/OmniRoute
 support: https://github.com/diegosouzapw/OmniRoute/issues
 port: 20128
-icon: omniroute.png
+icon: https://github.com/pasmer/pro-umbrel-app-store/blob/e320fded050ebaac18428359c84255c122d6c213/axehero-omniroute/omniroute.png
 gallery:
   - https://github.com/pasmer/pro-umbrel-app-store/blob/9cad0cb35b34ae6789602d0f1406285870a91b60/axehero-omniroute/1.png
   - https://github.com/pasmer/pro-umbrel-app-store/blob/9cad0cb35b34ae6789602d0f1406285870a91b60/axehero-omniroute/2.png
