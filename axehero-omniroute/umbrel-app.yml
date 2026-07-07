@@ -16,9 +16,9 @@ support: https://github.com/diegosouzapw/OmniRoute/issues
 port: 20128
 icon: omniroute.png
 gallery:
-  - 1.png
-  - 2.png
-  - 3.png
+  - https://github.com/pasmer/pro-umbrel-app-store/blob/9cad0cb35b34ae6789602d0f1406285870a91b60/axehero-omniroute/1.png
+  - https://github.com/pasmer/pro-umbrel-app-store/blob/9cad0cb35b34ae6789602d0f1406285870a91b60/axehero-omniroute/2.png
+  - https://github.com/pasmer/pro-umbrel-app-store/blob/9cad0cb35b34ae6789602d0f1406285870a91b60/axehero-omniroute/3.png
 releaseNotes: >-
   Initial release for AxeHero App Store.
 dependencies: []
