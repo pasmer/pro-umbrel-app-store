@@ -1,0 +1,27 @@
+manifestVersion: 1
+id: axehero-omniroute
+category: AI
+name: OmniRoute
+version: "3.8.45"
+tagline: Unified local AI gateway for multiple LLM providers
+description: >-
+  OmniRoute is an open-source, local AI gateway designed to unify and optimize access to multiple LLM providers.
+  It acts as a central proxy that allows you to connect various AI coding tools—such as Cursor, Claude Code, Cline, and Copilot—to over 230 different AI providers through a single OpenAI-compatible endpoint (http://localhost:20128/v1).
+
+  It features smart routing & fallbacks, cost management, token compression, and MCP (Model Context Protocol) support.
+developer: Diego Souza
+website: https://github.com/diegosouzapw/OmniRoute
+repo: https://github.com/diegosouzapw/OmniRoute
+support: https://github.com/diegosouzapw/OmniRoute/issues
+port: 20128
+icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/omniroute.png
+gallery:
+  - 1.png
+  - 2.png
+  - 3.png
+releaseNotes: >-
+  Initial release for AxeHero App Store.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  app:
+    image: diegosouzapw/omniroute:latest
+    restart: unless-stopped
+    stop_grace_period: 40s
+    ports:
+      - "20128:20128"
+    volumes:
+      - ${APP_DATA_DIR}/data:/app/data
+    networks:
+      - umbrel_main_network
+
+networks:
+  umbrel_main_network:
+    external: true
