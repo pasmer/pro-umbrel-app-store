@@ -14,7 +14,7 @@ website: https://github.com/diegosouzapw/OmniRoute
 repo: https://github.com/diegosouzapw/OmniRoute
 support: https://github.com/diegosouzapw/OmniRoute/issues
 port: 20128
-icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/omniroute.png
+icon: omniroute.png
 gallery:
   - 1.png
   - 2.png
