@@ -9,7 +9,7 @@ services:
     # (node:24-trixie-slim → USER node, UID 1000 / GID 1000). Umbrel creates
     # ${APP_DATA_DIR} owned by 1000:1000, so this lets the app write its
     # SQLite DB, logs, and backups without needing a root step.
-    user: "1000:1000"
+    # user: "1000:1000"
     ports:
       - "20128:20128"
     volumes:
