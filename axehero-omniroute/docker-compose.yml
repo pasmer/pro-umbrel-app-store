@@ -2,12 +2,24 @@ version: "3.7"
 
 services:
   app:
-    # Pinned to 3.8.44: 3.8.45+ ships a build with corrupted Next.js server
-    # chunks ("file data stream has unexpected number of bytes" on startup,
-    # container stuck unhealthy — see diegosouzapw/OmniRoute#6401, open/
-    # unresolved upstream as of 2026-07). Bump back to :latest once that's
-    # fixed and confirmed working.
-    image: diegosouzapw/omniroute:3.8.44
+    # Custom arm64 build (pasmer/omniroute:3.8.44-arm64-fix), NOT the upstream
+    # diegosouzapw/omniroute image. Built from the v3.8.44 tag with one added
+    # line (COPY .../node_modules/wreq-js) to fix a native-module packaging
+    # gap: the official image's Docker build (npm ci --ignore-scripts) skips
+    # the postinstall step that normally repairs the wreq-js native binary
+    # (scripts/build/postinstall.mjs fixWreqJsBinary — see upstream issues
+    # #129/#321/#426/#1634), so on arm64 the instrumentation hook crashes on
+    # every request with "Internal Server Error". better-sqlite3 gets the same
+    # explicit COPY treatment upstream; wreq-js was missing it.
+    #
+    # 3.8.45+ upstream also ships a separate, unrelated build-corruption bug
+    # ("file data stream has unexpected number of bytes" — diegosouzapw/
+    # OmniRoute#6401, open/unresolved as of 2026-07), so this stays pinned to
+    # 3.8.44 rather than tracking :latest.
+    #
+    # Rebuild steps if you need to update: see omniroute-wreqjs-fix-NOTES.md.
+    # Consider upstreaming the one-line fix as a PR once verified stable.
+    image: pasmer/omniroute:3.8.44-arm64-fix
     restart: unless-stopped
     stop_grace_period: 40s
     # Matches the UID/GID of the `node` user baked into the omniroute image
