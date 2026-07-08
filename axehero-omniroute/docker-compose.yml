@@ -2,14 +2,19 @@ version: "3.7"
 
 services:
   app:
-    image: diegosouzapw/omniroute:latest
+    # Pinned to 3.8.44: 3.8.45+ ships a build with corrupted Next.js server
+    # chunks ("file data stream has unexpected number of bytes" on startup,
+    # container stuck unhealthy — see diegosouzapw/OmniRoute#6401, open/
+    # unresolved upstream as of 2026-07). Bump back to :latest once that's
+    # fixed and confirmed working.
+    image: diegosouzapw/omniroute:3.8.44
     restart: unless-stopped
     stop_grace_period: 40s
     # Matches the UID/GID of the `node` user baked into the omniroute image
     # (node:24-trixie-slim → USER node, UID 1000 / GID 1000). Umbrel creates
     # ${APP_DATA_DIR} owned by 1000:1000, so this lets the app write its
     # SQLite DB, logs, and backups without needing a root step.
-    # user: "1000:1000"
+    user: "1000:1000"
     ports:
       - "20128:20128"
     volumes:
