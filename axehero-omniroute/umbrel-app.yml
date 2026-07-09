@@ -2,7 +2,7 @@ manifestVersion: 1
 id: axehero-omniroute
 category: AI
 name: OmniRoute
-version: "3.8.44pas"
+version: "3.8.44pas2"
 tagline: Unified local AI gateway for multiple LLM providers
 description: >-
   OmniRoute is an open-source, local AI gateway designed to unify and optimize access to multiple LLM providers.

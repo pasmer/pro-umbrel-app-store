@@ -19,7 +19,7 @@ services:
     #
     # Rebuild steps if you need to update: see omniroute-wreqjs-fix-NOTES.md.
     # Consider upstreaming the one-line fix as a PR once verified stable.
-    image: pasmer/omniroute:3.8.44-arm64-fix
+    image: pasmer/omniroute:3.8.44-arm64-fix-pi
     restart: unless-stopped
     stop_grace_period: 40s
     # Matches the UID/GID of the `node` user baked into the omniroute image
