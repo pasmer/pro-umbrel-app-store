@@ -1,0 +1,22 @@
+manifestVersion: 1
+id: axehero-jarvis-mission-control
+category: AI
+name: JARVIS Mission Control
+version: "0.1.0"
+tagline: Voice-first control plane for Hermes Agent
+description: >-
+  A private web dashboard for controlling Hermes Agent with streaming responses,
+  tool activity, session continuity, and browser voice controls. Jarvis runs as
+  a lightweight companion service and connects to the Hermes API over the local
+  Umbrel Docker network.
+developer: Pasmer
+website: https://hermes-agent.nousresearch.com
+dependencies:
+  - hermes-agent
+repo: https://github.com/REPLACE_WITH_YOUR_ACCOUNT/jarvis-mission-control
+support: https://github.com/REPLACE_WITH_YOUR_ACCOUNT/jarvis-mission-control/issues
+port: 18791
+gallery: []
+path: /
+defaultUsername: ""
+defaultPassword: ""
