@@ -1,8 +1,8 @@
 manifestVersion: 1
 id: axehero-jarvis-mission-control
-category: ai
+category: AI
 name: JARVIS Mission Control
-version: "0.1.0"
+version: "0.1.1"
 tagline: Voice-first control plane for Hermes Agent
 description: >-
   A private web dashboard for controlling Hermes Agent with streaming responses,

@@ -8,8 +8,7 @@ services:
       - umbrel_main_network
 
   web:
-    build: .
-    image: jarvis-mission-control:local
+    image: docker.io/pasmer/axehero-jarvis-mission-control:0.1.0
     restart: unless-stopped
     stop_grace_period: 1m
     volumes:
