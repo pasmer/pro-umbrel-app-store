@@ -1,6 +1,6 @@
 manifestVersion: 1
 id: axehero-jarvis-mission-control
-category: AI
+category: ai
 name: JARVIS Mission Control
 version: "0.1.0"
 tagline: Voice-first control plane for Hermes Agent
@@ -13,8 +13,8 @@ developer: Pasmer
 website: https://hermes-agent.nousresearch.com
 dependencies:
   - hermes-agent
-repo: https://github.com/pasmer/jarvis-mission-control
-support: https://github.com/pasmer/jarvis-mission-control/issues
+repo: https://github.com/REPLACE_WITH_YOUR_ACCOUNT/jarvis-mission-control
+support: https://github.com/REPLACE_WITH_YOUR_ACCOUNT/jarvis-mission-control/issues
 port: 18791
 gallery: []
 path: /

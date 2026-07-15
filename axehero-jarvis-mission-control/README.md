@@ -16,10 +16,10 @@ Headless web companion for the Hermes Agent Umbrel app.
 Create the key file in the app data directory before starting the app:
 
 ```bash
-mkdir -p /home/umbrel/umbrel/app-data/jarvis-mission-control/data
+mkdir -p /home/umbrel/umbrel/app-data/axehero-jarvis-mission-control/data
 printf '%s\n' 'YOUR_HERMES_API_KEY' \
-  | sudo tee /home/umbrel/umbrel/app-data/jarvis-mission-control/data/hermes_api_key >/dev/null
-sudo chmod 600 /home/umbrel/umbrel/app-data/jarvis-mission-control/data/hermes_api_key
+  | sudo tee /home/umbrel/umbrel/app-data/axehero-jarvis-mission-control/data/hermes_api_key >/dev/null
+sudo chmod 600 /home/umbrel/umbrel/app-data/axehero-jarvis-mission-control/data/hermes_api_key
 ```
 
 The container connects to `http://hermes-agent_web_1:8642` on the Umbrel Docker
