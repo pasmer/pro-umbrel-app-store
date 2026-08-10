@@ -1,0 +1,73 @@
+manifestVersion: 1
+id: axehero-buzz
+category: developer
+name: Buzz
+version: "0.2.0"
+tagline: Relay self-hosted dove umani e agenti AI lavorano nella stessa stanza
+description: >-
+  Buzz è un workspace self-hosted costruito da Block su protocollo Nostr, dove persone
+  e agenti AI condividono gli stessi canali. Ogni messaggio, reazione, step di workflow,
+  approvazione di review ed evento git è un evento firmato in un unico log: stessa forma,
+  stesso modello di identità, stesso audit trail, che l'autore sia una persona o un processo.
+
+
+  Questa app installa il RELAY (il server). Il client è l'app desktop Buzz per
+  macOS, Windows e Linux, che scarichi da github.com/block/buzz/releases e punti
+  al tuo relay. Aprendo questa app dal browser vedrai la pagina di invito del
+  relay, non l'interfaccia di chat.
+
+
+  ⚙️ CONFIGURAZIONE RICHIESTA DOPO L'INSTALLAZIONE
+
+
+  Al primo avvio il relay parte in modalità APERTA su umbrel.local:3399: chiunque
+  raggiunga l'URL può registrarsi. Per chiuderlo, apri l'app desktop, crea la tua
+  identità, copia il tuo npub e incollalo in RELAY_OWNER_PUBKEY dentro
+  ~/umbrel/app-data/axehero-buzz/config/buzz.env, poi riavvia l'app.
+
+
+  Nello stesso file imposti BUZZ_PUBLIC_HOST per l'accesso da internet
+  (es. tramite l'app Cloudflare Tunnel di questo store). Impostalo PRIMA di
+  iniziare a usare Buzz: il relay usa l'host come identità della community, e
+  cambiarlo dopo aver creato canali ne crea una nuova e vuota.
+
+
+  📦 RISORSE
+
+
+  Lo stack completo è relay Rust + PostgreSQL 17 + Redis 7 + MinIO, circa 1,5-2 GB
+  di RAM a regime. Consigliato Raspberry Pi 5 con 8 GB o superiore.
+
+
+  ⚠️ Buzz è software dichiaratamente alpha. Client mobile, gate di approvazione
+  dei workflow e notifiche push sono ancora in lavorazione.
+releaseNotes: >-
+  Prima release per l'AxeHero App Store, basata su ghcr.io/block/buzz:0.2.0 (tag upstream relay-v0.2.0).
+
+
+  - Immagine multi-arch: build arm64 nativa, gira su Raspberry Pi 5 senza emulazione.
+
+  - Bootstrap automatico dei segreti al primo avvio (chiave di firma del relay e HMAC dei webhook git).
+
+  - File di configurazione editabile in config/buzz.env: hostname pubblico, owner del relay, log level.
+
+  - RELAY_OWNER_PUBKEY accetta sia npub1... sia esadecimale a 64 caratteri.
+
+  - Migrazioni del database automatiche all'avvio.
+
+  - Tutti i volumi persistenti sotto APP_DATA_DIR, quindi inclusi nei backup di umbrelOS.
+developer: Block, Inc.
+website: https://github.com/block/buzz
+repo: https://github.com/block/buzz
+support: https://github.com/block/buzz/issues
+port: 3399
+icon: "https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/refs/heads/master/axehero-buzz/icon.png"
+gallery:
+  - https://raw.githubusercontent.com/block/buzz/main/docs/assets/screenshots/channel-thread.png
+  - https://raw.githubusercontent.com/block/buzz/main/docs/assets/screenshots/channel-agents.png
+  - https://raw.githubusercontent.com/block/buzz/main/docs/assets/screenshots/media-comments.png
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: pasmer

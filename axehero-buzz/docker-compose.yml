@@ -1,0 +1,184 @@
+version: "3.7"
+
+# Buzz relay for umbrelOS — AxeHero Community App Store
+#
+# Stack: buzz-relay (Rust) + Postgres 17 + Redis 7 + MinIO.
+# All four are genuine runtime dependencies of the relay (events + FTS search,
+# pub/sub + presence, Blossom media storage). Upstream's deploy/compose bundle
+# is the reference; this file adapts it to Umbrel conventions.
+#
+# Ports: nothing is published to the host directly. umbrelOS' app_proxy fronts
+# the relay on the manifest port (3399). Postgres/Redis/MinIO stay on the
+# app-internal bridge network and are never reachable from outside the app.
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: axehero-buzz_relay_1
+      APP_PORT: 3000
+      # Buzz clients authenticate with NIP-42 (Schnorr challenge/response) over
+      # the same WebSocket that carries traffic. Umbrel's password gate would
+      # reject the handshake before Buzz ever sees it, so auth is delegated to
+      # the relay: it runs in closed mode (owner + explicit membership) once
+      # RELAY_OWNER_PUBKEY is set in config/buzz.env.
+      PROXY_AUTH_ADD: "false"
+
+  # Docker creates missing bind-mount targets as root, which the relay (uid
+  # 1000) cannot write. This runs once per start and fixes only the two dirs
+  # the relay owns — postgres/redis/minio manage their own permissions and
+  # must not be touched.
+  init:
+    image: alpine:3.21
+    user: "0:0"
+    restart: "no"
+    command:
+      - /bin/sh
+      - -ec
+      - |
+        mkdir -p /appdata/config /appdata/git
+        chown -R 1000:1000 /appdata/config /appdata/git
+        chmod 0755 /appdata/config /appdata/git
+    volumes:
+      - ${APP_DATA_DIR}:/appdata
+
+  relay:
+    image: ghcr.io/block/buzz:0.2.0
+    restart: unless-stopped
+    stop_grace_period: 1m
+    user: "1000:1000"
+    entrypoint: ["/bin/bash", "/entrypoint.sh"]
+    environment:
+      BUZZ_BIND_ADDR: 0.0.0.0:3000
+      BUZZ_HEALTH_PORT: "8080"
+      BUZZ_METRICS_PORT: "9102"
+      DATABASE_URL: postgres://buzz:buzz_internal_pg@postgres:5432/buzz
+      REDIS_URL: redis://:buzz_internal_redis@redis:6379
+      BUZZ_S3_ENDPOINT: http://minio:9000
+      BUZZ_S3_ACCESS_KEY: buzzmedia
+      BUZZ_S3_SECRET_KEY: buzz_internal_minio
+      BUZZ_S3_BUCKET: buzz-media
+      BUZZ_GIT_REPO_PATH: /data/git
+      # Embedded SQLx migrations run on boot. Required for a fresh install and
+      # for schema changes across relay versions.
+      BUZZ_AUTO_MIGRATE: "true"
+      BUZZ_GIT_CONFORMANCE_PROBE: "true"
+      BUZZ_CONFIG_DIR: /config
+    volumes:
+      - ${APP_DATA_DIR}/entrypoint.sh:/entrypoint.sh:ro
+      - ${APP_DATA_DIR}/config:/config
+      - ${APP_DATA_DIR}/git:/data/git
+    depends_on:
+      init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+      minio-init:
+        condition: service_completed_successfully
+    # The runtime image has bash but the readiness endpoint lives on a separate
+    # port; probe it over /dev/tcp rather than adding a curl dependency.
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "bash -ec 'exec 3<>/dev/tcp/127.0.0.1/8080; printf \"GET /_readiness HTTP/1.1\\r\\nHost: 127.0.0.1\\r\\nConnection: close\\r\\n\\r\\n\" >&3; grep -q \"200 OK\" <&3'",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 12
+      start_period: 90s
+    networks:
+      - default
+      - umbrel_main_network
+
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    stop_grace_period: 1m
+    environment:
+      POSTGRES_DB: buzz
+      POSTGRES_USER: buzz
+      POSTGRES_PASSWORD: buzz_internal_pg
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ${APP_DATA_DIR}/postgres:/var/lib/postgresql/data
+    # Postgres uses shared memory for parallel query and hash joins; the 64MB
+    # Docker default is a common source of "could not resize shared memory"
+    # on Pi-class hardware.
+    shm_size: 256mb
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U buzz -d buzz"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+    networks:
+      - default
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command:
+      - redis-server
+      - --appendonly
+      - "yes"
+      - --requirepass
+      - buzz_internal_redis
+      # Pub/sub + presence only; the durable data lives in Postgres. Capping
+      # this keeps Redis from competing with Postgres for the Pi's RAM.
+      - --maxmemory
+      - 256mb
+      - --maxmemory-policy
+      - allkeys-lru
+    volumes:
+      - ${APP_DATA_DIR}/redis:/data
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -a buzz_internal_redis ping | grep -q PONG"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    networks:
+      - default
+
+  minio:
+    image: minio/minio:RELEASE.2025-09-07T16-13-09Z
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: buzzmedia
+      MINIO_ROOT_PASSWORD: buzz_internal_minio
+    volumes:
+      - ${APP_DATA_DIR}/minio:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:9000/minio/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+    networks:
+      - default
+
+  minio-init:
+    image: minio/mc:RELEASE.2025-08-13T08-35-41Z
+    restart: "no"
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint:
+      - /bin/sh
+      - -ec
+      - |
+        mc alias set local http://minio:9000 buzzmedia buzz_internal_minio
+        mc mb --ignore-existing local/buzz-media
+        mc anonymous set none local/buzz-media
+    networks:
+      - default
+
+networks:
+  default:
+  umbrel_main_network:
+    external: true

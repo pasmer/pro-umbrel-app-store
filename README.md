@@ -37,6 +37,7 @@ Di seguito sono elencate le applicazioni incluse in questo App Store:
 | **Italy COVID-19 Dashboard** | `axehero-covid19-dashboard` | `8100` | Analytics | Dashboard interattiva Shiny (R) per l'analisi dei dati COVID-19 in Italia. |
 | **WhatsappList** | `axehero-whatsapplist` | `7676` | Communication | Invio massivo e automatizzato di messaggi WhatsApp tramite file CSV. |
 | **OmniRoute** | `axehero-omniroute` | `20128` | AI | Gateway locale unificato per accedere a molteplici provider LLM. |
+| **Buzz** | `axehero-buzz` | `3399` | Developer | Relay self-hosted (Nostr) dove umani e agenti AI condividono gli stessi canali. Richiede configurazione post-installazione, vedi [README](axehero-buzz/README.md). |
 | **Hello World** | `axehero-hello-world` | `4000` | Development | Applicazione demo e template di esempio per il community store. |
 | *Postiz* | `axehero-postiz` | - | - | *In arrivo / In fase di sviluppo* |
 
