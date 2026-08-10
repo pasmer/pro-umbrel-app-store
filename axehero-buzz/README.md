@@ -85,11 +85,23 @@ o nella dashboard Cloudflare Zero Trust:
 | Campo | Valore |
 | :--- | :--- |
 | Public hostname | `buzz.miodominio.it` |
-| Service type | `HTTP` |
-| URL | `axehero-buzz_relay_1:3000` |
+| Path | *(vuoto)* |
+| Service URL | `http://host.docker.internal:3399` |
 
-Punta **direttamente al container del relay**, non a `umbrel.local:3399`. Il relay è già collegato a
-`umbrel_main_network`, quindi cloudflared lo risolve per nome.
+> Il container `cloudflared-connector` dell'app `axehero-cloudflared` **non** è collegato a
+> `umbrel_main_network`: ha solo `extra_hosts: host.docker.internal:host-gateway`. Non può quindi
+> risolvere i nomi dei container di altre app, e vede unicamente le porte pubblicate sull'host.
+> Da qui `host.docker.internal:3399` (la porta dell'`app_proxy`) e non `axehero-buzz_relay_1:3000`,
+> che dall'interno del connector non esiste.
+>
+> Va bene passare per l'`app_proxy` proprio perché la sua autenticazione è disattivata: l'handshake
+> NIP-42 non viene intercettato e l'upgrade WebSocket viene inoltrato.
+>
+> `http://192.168.1.112:3399` (IP del Pi) funziona ugualmente, ma si rompe se il DHCP cambia
+> l'indirizzo. Se preferisci l'IP, mettilo a riserva statica sul router.
+
+**Non aggiungere una policy Cloudflare Access** su questo hostname: l'app desktop non sa fare il
+login interattivo di Access e il WebSocket verrebbe respinto senza un errore leggibile.
 
 **c. Riavvia l'app Buzz**, poi collega i client con `BUZZ_RELAY_URL=wss://buzz.miodominio.it`.
 
@@ -139,7 +151,8 @@ docker ps --filter name=axehero-buzz
 | `ERRORE DI CONFIGURAZIONE` nei log | `RELAY_OWNER_PUBKEY` malformato in `buzz.env` |
 | I canali sono spariti dopo un cambio di dominio | Nuova community seminata: rimetti il vecchio `BUZZ_PUBLIC_HOST` |
 | Il client desktop non si connette | Verifica che `BUZZ_PUBLIC_TLS` corrisponda a `ws://` o `wss://` usato dal client |
-| `403` dal tunnel | Cloudflare punta all'app_proxy invece che a `axehero-buzz_relay_1:3000` |
+| `502` / `connection refused` dal tunnel | Service URL punta alla porta 3000, che non è pubblicata sull'host. Usa `http://host.docker.internal:3399` |
+| `403` dal tunnel | C'è una policy Cloudflare Access davanti all'hostname: rimuovila |
 
 ---
 
