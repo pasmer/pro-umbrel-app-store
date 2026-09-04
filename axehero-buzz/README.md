@@ -4,9 +4,10 @@ Relay [Buzz](https://github.com/block/buzz) self-hosted su umbrelOS, testato per
 
 | | |
 | :--- | :--- |
-| **Immagine** | `ghcr.io/block/buzz:0.2.0` (upstream tag `relay-v0.2.0`) |
+| **Immagine** | `ghcr.io/block/buzz:0.2.1` |
 | **Porta Umbrel** | `3399` |
-| **Stack** | buzz-relay (Rust) + PostgreSQL 17 + Redis 7 + MinIO |
+| **Pairing mobile** | `5001` (da esporre tramite reverse proxy HTTPS/WebSocket) |
+| **Stack** | buzz-relay + buzz-pair-relay + PostgreSQL 17 + Redis 7 + MinIO |
 | **RAM a regime** | ~1,5–2 GB |
 | **Config** | `~/umbrel/app-data/axehero-buzz/config/buzz.env` |
 
@@ -20,17 +21,18 @@ Il **client** è l'app desktop Buzz (Tauri) per macOS / Windows / Linux, che sca
 [release upstream](https://github.com/block/buzz/releases/latest) e configuri per puntare al tuo relay.
 
 Aprendo la tile Buzz dalla dashboard di umbrelOS vedrai la **pagina di invito** servita dal relay,
-non l'interfaccia di chat. Non è un errore: alla versione 0.2.0 non esiste ancora un client web completo.
+non l'interfaccia di chat. Il client principale è l'app desktop Buzz; il pairing mobile usa il
+servizio dedicato incluso nello stack.
 
 ---
 
-## Setup in 4 passi
+## Setup
 
 ### 1. Installa e avvia
 
 Dall'App Store AxeHero. Il primo avvio richiede qualche minuto: viene creato il database ed eseguite le migrazioni.
 
-Al termine il relay è raggiungibile su `ws://umbrel.local:3399` in **modalità aperta** — chiunque sulla tua LAN può registrarsi. Va bene per ora, la chiudiamo al passo 3.
+Al termine il relay è raggiungibile su `ws://umbrel.local:3399` in **modalità aperta** — chiunque sulla tua LAN può registrarsi. Va bene per il primo accesso; va chiuso prima di esporlo a internet.
 
 ### 2. Collega l'app desktop
 
@@ -65,9 +67,9 @@ docker exec axehero-buzz_relay_1 buzz-admin add-member --pubkey npub1... --role 
 docker exec axehero-buzz_relay_1 buzz-admin list-members
 ```
 
-### 4. Esponi su internet con Cloudflare Tunnel
+### 4. Configura il dominio principale
 
-**a. Imposta l'hostname pubblico** in `config/buzz.env`:
+Imposta l'hostname pubblico in `config/buzz.env`:
 
 ```bash
 BUZZ_PUBLIC_HOST=buzz.miodominio.it
@@ -79,31 +81,48 @@ BUZZ_PUBLIC_TLS=true
 > Cambiarlo dopo non migra i dati: seminerà una community nuova e vuota, e i canali precedenti
 > resteranno nel database ma irraggiungibili.
 
-**b. Configura il tunnel** nell'app Cloudflare Tunnel di questo store (`axehero-cloudflared`),
-o nella dashboard Cloudflare Zero Trust:
+Configura un Proxy Host in Nginx Proxy Manager:
 
 | Campo | Valore |
 | :--- | :--- |
 | Public hostname | `buzz.miodominio.it` |
-| Path | *(vuoto)* |
-| Service URL | `http://host.docker.internal:3399` |
+| Forward scheme | `http` |
+| Forward hostname/IP | indirizzo locale dell'Umbrel |
+| Forward port | `3399` |
+| WebSocket Support | attivo |
+| SSL | certificato valido per `buzz.miodominio.it`, Force SSL attivo |
 
-> Il container `cloudflared-connector` dell'app `axehero-cloudflared` **non** è collegato a
-> `umbrel_main_network`: ha solo `extra_hosts: host.docker.internal:host-gateway`. Non può quindi
-> risolvere i nomi dei container di altre app, e vede unicamente le porte pubblicate sull'host.
-> Da qui `host.docker.internal:3399` (la porta dell'`app_proxy`) e non `axehero-buzz_relay_1:3000`,
-> che dall'interno del connector non esiste.
->
-> Va bene passare per l'`app_proxy` proprio perché la sua autenticazione è disattivata: l'handshake
-> NIP-42 non viene intercettato e l'upgrade WebSocket viene inoltrato.
->
-> `http://192.168.1.112:3399` (IP del Pi) funziona ugualmente, ma si rompe se il DHCP cambia
-> l'indirizzo. Se preferisci l'IP, mettilo a riserva statica sul router.
+Usa l'indirizzo locale dell'Umbrel oppure un nome risolvibile da Nginx. Mantieni stabile
+l'indirizzo IP tramite prenotazione DHCP, se possibile.
 
-**Non aggiungere una policy Cloudflare Access** su questo hostname: l'app desktop non sa fare il
-login interattivo di Access e il WebSocket verrebbe respinto senza un errore leggibile.
+### 5. Configura il pairing mobile
 
-**c. Riavvia l'app Buzz**, poi collega i client con `BUZZ_RELAY_URL=wss://buzz.miodominio.it`.
+Creare un secondo Proxy Host per il servizio pairing:
+
+| Campo | Valore |
+| :--- | :--- |
+| Public hostname | `pair.buzz.miodominio.it` |
+| Forward scheme | `http` |
+| Forward hostname/IP | indirizzo locale dell'Umbrel |
+| Forward port | `5001` |
+| WebSocket Support | attivo |
+| SSL | nuovo certificato per `pair.buzz.miodominio.it`, Force SSL attivo |
+
+Il certificato del sottodominio `pair` deve includere esattamente quel nome. Un certificato
+valido solo per il dominio principale non è sufficiente.
+
+Poi aggiungi in `config/buzz.env`:
+
+```bash
+BUZZ_PAIRING_RELAY_URL=wss://pair.buzz.miodominio.it
+```
+
+Non aggiungere una policy di accesso interattiva davanti ai due endpoint: il client Buzz deve
+completare direttamente l'handshake WebSocket e l'autenticazione NIP-42 del relay principale.
+
+Riavvia l'app Buzz. Il documento NIP-11 del relay deve mostrare `pairing_relay_url` con l'URL
+del sottodominio pairing. A quel punto il client desktop può generare il QR code e l'app mobile
+può collegarsi.
 
 ---
 
@@ -114,10 +133,8 @@ le liste di membri e i post creati via REST. Perderla significa che quelle firme
 verificabili. Tutto sta sotto `APP_DATA_DIR`, quindi rientra nei backup di umbrelOS — ma tienine
 una copia a parte.
 
-**Upload di media.** Il piano free di Cloudflare limita il body delle richieste a 100 MB. File più
-grandi passano solo in LAN o con un piano superiore.
-
-**WebSocket.** Cloudflare li proxya senza configurazione aggiuntiva. L'autenticazione dell'app_proxy
+**WebSocket.** Il reverse proxy deve inoltrare l'upgrade WebSocket sia per il relay principale sia
+per il servizio pairing. L'autenticazione dell'app_proxy
 di Umbrel è disattivata (`PROXY_AUTH_ADD: "false"`) perché intercetterebbe l'handshake NIP-42 prima
 che Buzz lo veda: l'accesso è protetto dalla modalità chiusa del relay, non dalla password di Umbrel.
 **Questo rende il passo 3 obbligatorio prima del passo 4.**
@@ -151,8 +168,10 @@ docker ps --filter name=axehero-buzz
 | `ERRORE DI CONFIGURAZIONE` nei log | `RELAY_OWNER_PUBKEY` malformato in `buzz.env` |
 | I canali sono spariti dopo un cambio di dominio | Nuova community seminata: rimetti il vecchio `BUZZ_PUBLIC_HOST` |
 | Il client desktop non si connette | Verifica che `BUZZ_PUBLIC_TLS` corrisponda a `ws://` o `wss://` usato dal client |
-| `502` / `connection refused` dal tunnel | Service URL punta alla porta 3000, che non è pubblicata sull'host. Usa `http://host.docker.internal:3399` |
-| `403` dal tunnel | C'è una policy Cloudflare Access davanti all'hostname: rimuovila |
+| `502` / `connection refused` sul relay | Proxy Host principale punta alla porta sbagliata: usa `3399` |
+| QR mobile in errore `404` | Il Proxy Host pairing punta alla porta sbagliata: usa `5001` |
+| Errore certificato sul pairing | Il certificato non contiene `pair.<dominio>` |
+| `pairing_relay_url` assente dal documento NIP-11 | Manca `BUZZ_PAIRING_RELAY_URL` in `buzz.env` oppure l'app non è stata riavviata |
 
 ---
 

@@ -7,9 +7,10 @@ version: "3.7"
 # pub/sub + presence, Blossom media storage). Upstream's deploy/compose bundle
 # is the reference; this file adapts it to Umbrel conventions.
 #
-# Ports: nothing is published to the host directly. umbrelOS' app_proxy fronts
-# the relay on the manifest port (3399). Postgres/Redis/MinIO stay on the
-# app-internal bridge network and are never reachable from outside the app.
+# Ports: umbrelOS' app_proxy fronts the main relay on the manifest port (3399).
+# The short-lived pairing relay is published on host port 5001 so a reverse
+# proxy can expose it on a dedicated WSS hostname. Postgres/Redis/MinIO stay on
+# the app-internal bridge network and are never reachable from outside the app.
 
 services:
   app_proxy:
@@ -42,7 +43,7 @@ services:
       - ${APP_DATA_DIR}:/appdata
 
   relay:
-    image: ghcr.io/block/buzz:0.2.0
+    image: ${BUZZ_IMAGE:-ghcr.io/block/buzz:0.2.1}
     restart: unless-stopped
     stop_grace_period: 1m
     user: "1000:1000"
@@ -93,6 +94,21 @@ services:
     networks:
       - default
       - umbrel_main_network
+
+  # Device pairing uses a short-lived, unauthenticated relay separate from the
+  # main membership-enforcing relay. The reverse proxy should expose host
+  # port 5001 as the pairing hostname and preserve WebSocket upgrades.
+  pair:
+    image: ${BUZZ_IMAGE:-ghcr.io/block/buzz:0.2.1}
+    restart: unless-stopped
+    stop_grace_period: 10s
+    entrypoint: ["/usr/local/bin/buzz-pair-relay"]
+    environment:
+      BUZZ_PAIR_RELAY_BIND_ADDR: 0.0.0.0:5000
+    ports:
+      - "5001:5000"
+    networks:
+      - default
 
   postgres:
     image: postgres:17-alpine
