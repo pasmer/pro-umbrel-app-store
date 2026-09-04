@@ -43,7 +43,7 @@ services:
       - ${APP_DATA_DIR}:/appdata
 
   relay:
-    image: ghcr.io/block/buzz:0.2.1
+    image: ghcr.io/block/buzz:main
     restart: unless-stopped
     stop_grace_period: 1m
     user: "1000:1000"
@@ -99,7 +99,7 @@ services:
   # main membership-enforcing relay. The reverse proxy should expose host
   # port 5001 as the pairing hostname and preserve WebSocket upgrades.
   pair:
-    image: ghcr.io/block/buzz:0.2.1
+    image: ghcr.io/block/buzz:main
     restart: unless-stopped
     stop_grace_period: 10s
     entrypoint: ["/usr/local/bin/buzz-pair-relay"]

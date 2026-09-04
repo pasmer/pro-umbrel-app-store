@@ -2,7 +2,7 @@ manifestVersion: 1
 id: axehero-buzz
 category: developer
 name: Buzz
-version: "0.2.2"
+version: "0.2.3"
 tagline: Relay self-hosted dove umani e agenti AI lavorano nella stessa stanza
 description: >-
   Buzz è un workspace self-hosted costruito da Block su protocollo Nostr, dove persone
@@ -48,8 +48,8 @@ description: >-
   ⚠️ Buzz è software dichiaratamente alpha. Client mobile, gate di approvazione
   dei workflow e notifiche push sono ancora in lavorazione.
 releaseNotes: >-
-  Aggiornamento del pacchetto AxeHero con Buzz Relay 0.2.1 e pairing mobile
-  integrato tramite un servizio sidecar dedicato.
+  Aggiornamento del pacchetto AxeHero con pairing mobile integrato tramite un
+  servizio sidecar dedicato e immagine Buzz allineata allo schema del database.
 
 
   - Immagine multi-arch: build arm64 nativa, gira su Raspberry Pi 5 senza emulazione.
@@ -64,7 +64,7 @@ releaseNotes: >-
 
   - BUZZ_PAIRING_RELAY_URL configurabile per il pairing mobile tramite reverse proxy HTTPS.
 
-  - Riferimenti alle immagini statici per compatibilità con il gestore app di umbrelOS.
+  - Immagine Buzz main, necessaria per mantenere la compatibilità con le migrazioni già applicate.
 
   - Migrazioni del database automatiche all'avvio.
 

@@ -4,7 +4,7 @@ Relay [Buzz](https://github.com/block/buzz) self-hosted su umbrelOS, testato per
 
 | | |
 | :--- | :--- |
-| **Immagine** | `ghcr.io/block/buzz:0.2.1` |
+| **Immagine** | `ghcr.io/block/buzz:main` (necessaria per il pairing e per lo schema attuale) |
 | **Porta Umbrel** | `3399` |
 | **Pairing mobile** | `5001` (da esporre tramite reverse proxy HTTPS/WebSocket) |
 | **Stack** | buzz-relay + buzz-pair-relay + PostgreSQL 17 + Redis 7 + MinIO |
