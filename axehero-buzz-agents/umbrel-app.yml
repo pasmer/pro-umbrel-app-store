@@ -1,0 +1,33 @@
+manifestVersion: 1
+id: axehero-buzz-agents
+category: AI
+name: Buzz Agents
+version: "0.1.0"
+tagline: Agenti Buzz sempre attivi su Umbrel con OpenRouter
+description: >-
+  Runner headless per gli agenti Buzz. Avvia Fizz, Honey e Pollen come processi
+  persistenti sul Raspberry Pi, collegati al relay Buzz tramite buzz-acp e
+  configurabili con modelli OpenRouter. Questa app non sostituisce il relay
+  axehero-buzz: lo usa come piano di comunicazione.
+
+
+  Dopo l'installazione modifica il file config/agents.env dentro la directory
+  app-data dell'app, inserendo le chiavi private degli agenti e la chiave API
+  OpenRouter. Le chiavi non sono incluse nell'App Store.
+
+
+  Per mantenere le identità e i canali già esistenti, usa le stesse chiavi
+  private Nostr degli agenti Buzz presenti sul Mac. Se crei nuove identità,
+  aggiungile come membri del relay e dei canali dal client Buzz.
+developer: Pasmer
+website: https://github.com/block/buzz
+repo: https://github.com/pasmer/pro-umbrel-app-store
+support: https://github.com/pasmer/pro-umbrel-app-store/issues
+port: 3398
+icon: "https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/refs/heads/master/axehero-buzz/icon.png"
+gallery: []
+path: /
+defaultUsername: ""
+defaultPassword: ""
+dependencies:
+  - axehero-buzz

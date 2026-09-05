@@ -38,6 +38,7 @@ Di seguito sono elencate le applicazioni incluse in questo App Store:
 | **WhatsappList** | `axehero-whatsapplist` | `7676` | Communication | Invio massivo e automatizzato di messaggi WhatsApp tramite file CSV. |
 | **OmniRoute** | `axehero-omniroute` | `20128` | AI | Gateway locale unificato per accedere a molteplici provider LLM. |
 | **Buzz** | `axehero-buzz` | `3399` | Developer | Relay self-hosted (Nostr) dove umani e agenti AI condividono gli stessi canali. Richiede configurazione post-installazione, vedi [README](axehero-buzz/README.md). |
+| **Buzz Agents** | `axehero-buzz-agents` | `3398` | AI | Runner headless per Fizz, Honey e Pollen con modelli OpenRouter, indipendenti dal client desktop. |
 | **Hello World** | `axehero-hello-world` | `4000` | Development | Applicazione demo e template di esempio per il community store. |
 | *Postiz* | `axehero-postiz` | - | - | *In arrivo / In fase di sviluppo* |
 

@@ -1,0 +1,35 @@
+# Headless Buzz agent runners for umbrelOS.
+# The relay remains in axehero-buzz. This companion app builds the upstream
+# ACP/agent/CLI binaries on first start and keeps one isolated runner per
+# Buzz identity, so Fizz, Honey and Pollen do not share a key or session.
+
+services:
+  app_proxy:
+    image: getumbrel/app-proxy:1.7.0
+    environment:
+      APP_HOST: axehero-buzz-agents_status_1
+      APP_PORT: 80
+    networks:
+      - umbrel_main_network
+
+  status:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    networks:
+      - umbrel_main_network
+
+  agent_runner:
+    image: rust:1.95-bookworm
+    restart: unless-stopped
+    stop_grace_period: 30s
+    entrypoint: ["/bin/bash", "/entrypoint.sh"]
+    volumes:
+      - ${APP_DATA_DIR}/entrypoint.sh:/entrypoint.sh:ro
+      - ${APP_DATA_DIR}/config:/config
+      - ${APP_DATA_DIR}/data:/data
+    networks:
+      - umbrel_main_network
+
+networks:
+  umbrel_main_network:
+    external: true
