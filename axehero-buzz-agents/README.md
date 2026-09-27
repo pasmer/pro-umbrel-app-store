@@ -1,5 +1,7 @@
 # Buzz Agents per umbrelOS
 
+Guida completa e ripetibile: [SETUP.md](SETUP.md).
+
 Companion app per eseguire Fizz, Honey e Pollen sul Raspberry Pi, senza tenere
 aperto Buzz Desktop sul Mac.
 
