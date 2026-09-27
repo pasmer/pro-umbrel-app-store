@@ -18,6 +18,8 @@ Inserisci:
 - `OMNIROUTE_MODEL` — normalmente `auto`;
 - `FIZZ_PRIVATE_KEY`, `HONEY_PRIVATE_KEY`, `POLLEN_PRIVATE_KEY` — le chiavi
   private Nostr dei rispettivi agenti;
+- `FIZZ_AGENT_OWNER` — la pubkey esadecimale del proprietario del relay, usata
+  dal filtro `owner-only`;
 - `BUZZ_API_TOKEN` — il token Buzz, se richiesto dal relay chiuso.
 
 Se aggiorni un'installazione precedente, sostituisci `OPENROUTER_API_KEY` con

@@ -38,6 +38,8 @@ BUZZ_SOURCE_REF=main
 FIZZ_PRIVATE_KEY=
 FIZZ_MODEL=auto
 FIZZ_SYSTEM_PROMPT=
+# Pubkey esadecimale del proprietario del relay per il filtro owner-only.
+FIZZ_AGENT_OWNER=
 
 HONEY_PRIVATE_KEY=
 HONEY_MODEL=auto
@@ -147,6 +149,9 @@ run_agent() {
       "BUZZ_ACP_RESPOND_TO=owner-only"
       "BUZZ_AGENT_REQUIRE_REPLY=1"
     )
+    if [[ "${label}" == "Fizz" && -n "${FIZZ_AGENT_OWNER:-}" ]]; then
+      env_args+=("BUZZ_ACP_AGENT_OWNER=${FIZZ_AGENT_OWNER}")
+    fi
     if [[ -n "${BUZZ_API_TOKEN}" ]]; then
       env_args+=("BUZZ_API_TOKEN=${BUZZ_API_TOKEN}")
     fi
