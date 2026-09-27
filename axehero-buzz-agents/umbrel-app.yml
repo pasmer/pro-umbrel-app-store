@@ -2,18 +2,20 @@ manifestVersion: 1
 id: axehero-buzz-agents
 category: AI
 name: Buzz Agents
-version: "0.1.0"
-tagline: Agenti Buzz sempre attivi su Umbrel con OpenRouter
+version: "0.2.0"
+tagline: Agenti Buzz sempre attivi su Umbrel con OmniRoute
 description: >-
   Runner headless per gli agenti Buzz. Avvia Fizz, Honey e Pollen come processi
   persistenti sul Raspberry Pi, collegati al relay Buzz tramite buzz-acp e
-  configurabili con modelli OpenRouter. Questa app non sostituisce il relay
+  configurabili tramite OmniRoute su un endpoint OpenAI-compatible. Questa app non sostituisce il relay
   axehero-buzz: lo usa come piano di comunicazione.
 
 
   Dopo l'installazione modifica il file config/agents.env dentro la directory
   app-data dell'app, inserendo le chiavi private degli agenti e la chiave API
-  OpenRouter. Le chiavi non sono incluse nell'App Store.
+  dell'endpoint OmniRoute. Il modello predefinito è auto: OmniRoute sceglie
+  automaticamente il provider e il modello disponibili. Le chiavi non sono
+  incluse nell'App Store.
 
 
   Per mantenere le identità e i canali già esistenti, usa le stesse chiavi
@@ -31,3 +33,4 @@ defaultUsername: ""
 defaultPassword: ""
 dependencies:
   - axehero-buzz
+  - axehero-omniroute
