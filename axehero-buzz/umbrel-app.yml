@@ -2,7 +2,7 @@ manifestVersion: 1
 id: axehero-buzz
 category: developer
 name: Buzz
-version: "0.2.3"
+version: "0.2.1"
 tagline: Relay self-hosted dove umani e agenti AI lavorano nella stessa stanza
 description: >-
   Buzz è un workspace self-hosted costruito da Block su protocollo Nostr, dove persone
