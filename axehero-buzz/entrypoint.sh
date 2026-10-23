@@ -11,7 +11,8 @@
 #      (see buzz_core::tenant::relay_url_authority) — getting these out of
 #      sync silently seeds a second, empty community.
 #   4. Accept RELAY_OWNER_PUBKEY as either npub1... or 64-char hex.
-#   5. exec buzz-relay.
+#   5. Pass the optional BUZZ_PAIRING_RELAY_URL through to the relay.
+#   6. exec buzz-relay.
 #
 # Everything here is idempotent: the config file is written once and never
 # overwritten, so an app update never clobbers the operator's settings.
@@ -112,7 +113,7 @@ if [[ ! -f "${CONFIG_FILE}" ]]; then
 # vecchi restano nel database ma non sono piu' raggiungibili.
 #
 # LAN (default):              umbrel.local:3399     + BUZZ_PUBLIC_TLS=false
-# Cloudflare Tunnel / HTTPS:  buzz.miodominio.it    + BUZZ_PUBLIC_TLS=true
+# Reverse proxy / HTTPS:      buzz.miodominio.it    + BUZZ_PUBLIC_TLS=true
 BUZZ_PUBLIC_HOST=umbrel.local:3399
 BUZZ_PUBLIC_TLS=false
 
@@ -128,7 +129,15 @@ BUZZ_PUBLIC_TLS=false
 RELAY_OWNER_PUBKEY=
 
 # -----------------------------------------------------------------------------
-# 3. SEGRETI — generati automaticamente, NON modificarli
+# 3. PAIRING MOBILE (opzionale)
+# -----------------------------------------------------------------------------
+# URL WebSocket del servizio pairing separato. Impostalo quando esponi il
+# servizio pair sulla porta host 5001 tramite un reverse proxy, per esempio:
+# BUZZ_PAIRING_RELAY_URL=wss://pair.buzz.miodominio.it
+BUZZ_PAIRING_RELAY_URL=
+
+# -----------------------------------------------------------------------------
+# 4. SEGRETI — generati automaticamente, NON modificarli
 # -----------------------------------------------------------------------------
 # La chiave del relay firma le liste di membri (kind:13534) e i post creati via
 # REST. Se la perdi o la cambi, quelle firme non sono piu' verificabili.
@@ -137,7 +146,7 @@ BUZZ_RELAY_PRIVATE_KEY=${_relay_key}
 BUZZ_GIT_HOOK_HMAC_SECRET=${_hmac}
 
 # -----------------------------------------------------------------------------
-# 4. OPZIONALI
+# 5. OPZIONALI
 # -----------------------------------------------------------------------------
 # Espone il browser dei repository git sulla web UI.
 BUZZ_SERVE_GIT_WEB_GUI=false
@@ -171,6 +180,12 @@ export BUZZ_MEDIA_BASE_URL="${_http}://${BUZZ_PUBLIC_HOST}/media"
 export BUZZ_MEDIA_SERVER_DOMAIN="${BUZZ_PUBLIC_HOST%%:*}"
 export BUZZ_CORS_ORIGINS="${_http}://${BUZZ_PUBLIC_HOST}"
 export RUST_LOG="buzz_relay=${BUZZ_LOG_LEVEL:-info},buzz_db=${BUZZ_LOG_LEVEL:-info},buzz_auth=${BUZZ_LOG_LEVEL:-info},buzz_pubsub=${BUZZ_LOG_LEVEL:-info},tower_http=warn"
+
+# Do not pass an empty pairing URL: the relay must omit pairing metadata when
+# mobile pairing has not been configured.
+if [[ -z "${BUZZ_PAIRING_RELAY_URL:-}" ]]; then
+  unset BUZZ_PAIRING_RELAY_URL
+fi
 
 # ── Owner pubkey → closed relay mode ────────────────────────────────────────
 _owner="${RELAY_OWNER_PUBKEY:-}"

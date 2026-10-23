@@ -2,7 +2,7 @@ manifestVersion: 1
 id: axehero-omniroute
 category: AI
 name: OmniRoute
-version: "3.8.44pas2"
+version: "3.8.50"
 tagline: Unified local AI gateway for multiple LLM providers
 description: >-
   OmniRoute is an open-source, local AI gateway designed to unify and optimize access to multiple LLM providers.
@@ -20,7 +20,10 @@ gallery:
   - https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/refs/heads/master/axehero-omniroute/2.png
   - https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/refs/heads/master/axehero-omniroute/3.png
 releaseNotes: >-
-  Initial release for AxeHero App Store.
+  Updated to the official OmniRoute 3.8.50 multi-architecture image with native
+  linux/arm64 support. This replaces the previous custom ARM64 image and fixes
+  the SQLite/instrumentation startup failure on ARM64 Umbrel hosts. Existing
+  data in /app/data is preserved.
 dependencies: []
 path: ""
 defaultUsername: ""
