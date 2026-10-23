@@ -1,0 +1,473 @@
+spawn ssh -tt -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=ERROR -o ConnectTimeout=15 -p 22 umbrel@192.168.1.112 export SUDOPW='***PASSWORD***'; echo IyEvYmluL2Jhc2gKQVBQPWF4ZWhlcm8tcmF0aW5nLXN2bS13ZWIKQ05UPXJhdGluZy1zdm0td2ViClVNQj0iJEhPTUUvdW1icmVsIjsgWyAtZCAiJFVNQiIgXSB8fCBVTUI9L2hvbWUvdW1icmVsL3VtYnJlbAoKaWYgZG9ja2VyIHBzID4vZGV2L251bGwgMj4mMTsgdGhlbiBORUVEU1VETz0wOyBlbHNlIE5FRURTVURPPTE7IGZpCmRrKCl7IGlmIFsgIiRORUVEU1VETyIgPSAiMCIgXTsgdGhlbiBkb2NrZXIgIiRAIjsgZWxzZSBwcmludGYgJyVzXG4nICIkU1VET1BXIiB8IHN1ZG8gLVMgLXAgJycgZG9ja2VyICIkQCI7IGZpOyB9CnN1ZG9jbWQoKXsgcHJpbnRmICclc1xuJyAiJFNVRE9QVyIgfCBzdWRvIC1TIC1wICcnICIkQCI7IH0KaGRyKCl7IGVjaG87IGVjaG8gIiMjIyMjIyMjIyMgJCogIyMjIyMjIyMjIyI7IH0KCmVjaG8gIj09PSBESUFHTk9TVElDQSBheGVoZXJvLXJhdGluZy1zdm0td2ViID09PSIKZWNobyAiZG9ja2VyIHJpY2hpZWRlIHN1ZG86ICRORUVEU1VETyAgIFVNQlJFTF9ESVI9JFVNQiIKCmhkciAiREFUQSAvIFVQVElNRSI7ICAgICAgICBkYXRlOyB1cHRpbWUKaGRyICJTSVNURU1BIjsgICAgICAgICAgICAgIHVuYW1lIC1hOyBoZWFkIC0zIC9ldGMvb3MtcmVsZWFzZSAyPi9kZXYvbnVsbApoZHIgIlZFUlNJT05FIFVNQlJFTCI7ICAgICAgY2F0ICIkVU1CL2luZm8uanNvbiIgMj4vZGV2L251bGwgfHwgY2F0IC9ldGMvdW1icmVsLXJlbGVhc2UgMj4vZGV2L251bGwKaGRyICJESVNDTyI7ICAgICAgICAgICAgICAgIGRmIC1oCmhkciAiSU5PREUiOyAgICAgICAgICAgICAgICBkZiAtaSB8IGhlYWQgLTgKaGRyICJNRU1PUklBIjsgICAgICAgICAgICAgIGZyZWUgLWgKaGRyICJURU1QRVJBVFVSQS9USFJPVFRMRSI7IHZjZ2VuY21kIG1lYXN1cmVfdGVtcCAyPi9kZXYvbnVsbDsgdmNnZW5jbWQgZ2V0X3Rocm90dGxlZCAyPi9kZXYvbnVsbApoZHIgIk9PTSBLSUxMRVIiOyAgICAgICAgICAgKGRtZXNnIC1UIDI+L2Rldi9udWxsIHx8IHN1ZG9jbWQgZG1lc2cgLVQgMj4vZGV2L251bGwpIHwgZ3JlcCAtaUUgIm91dCBvZiBtZW1vcnl8b29tLWtpbGxlcnxraWxsZWQgcHJvY2VzcyIgfCB0YWlsIC0yMApoZHIgIkRPQ0tFUiBJTkZPIjsgICAgICAgICAgZGsgdmVyc2lvbiAtLWZvcm1hdCAne3suU2VydmVyLlZlcnNpb259fScgMj4mMTsgZGsgaW5mbyAyPi9kZXYvbnVsbCB8IGdyZXAgLWlFICJzdG9yYWdlIGRyaXZlcnxjb250YWluZXJzfGltYWdlc3x3YXJuaW5nIiB8IGhlYWQgLTIwCgpoZHIgIkNPTlRBSU5FUiAodHV0dGkpIjsgICAgZGsgcHMgLWEgLS1mb3JtYXQgJ3t7Lk5hbWVzfX0gfCB7ey5TdGF0dXN9fSB8IHt7LlBvcnRzfX0gfCB7ey5JbWFnZX19JyAyPiYxCmhkciAiSU5TUEVDVCAkQ05UIjsgICAgICAgICBkayBpbnNwZWN0ICIkQ05UIiAtLWZvcm1hdCAnU3RhdHVzPXt7LlN0YXRlLlN0YXR1c319IFJ1bm5pbmc9e3suU3RhdGUuUnVubmluZ319IEV4aXRDb2RlPXt7LlN0YXRlLkV4aXRDb2RlfX0gRXJyb3I9Int7LlN0YXRlLkVycm9yfX0iIE9PTUtpbGxlZD17ey5TdGF0ZS5PT01LaWxsZWR9fSBSZXN0YXJ0cz17ey5SZXN0YXJ0Q291bnR9fSBTdGFydGVkQXQ9e3suU3RhdGUuU3RhcnRlZEF0fX0gRmluaXNoZWRBdD17ey5TdGF0ZS5GaW5pc2hlZEF0fX0gSW1hZ2U9e3suQ29uZmlnLkltYWdlfX0nIDI+JjEKaGRyICJIRUFMVEggJENOVCI7ICAgICAgICAgIGRrIGluc3BlY3QgIiRDTlQiIC0tZm9ybWF0ICd7e2pzb24gLlN0YXRlLkhlYWx0aH19JyAyPiYxCmhkciAiTE9HICRDTlQgKDI1MCByaWdoZSkiOyBkayBsb2dzIC0tdGFpbCAyNTAgIiRDTlQiIDI+JjEKaGRyICJJTU1BR0lOSSByYXRpbmciOyAgICAgIGRrIGltYWdlcyAyPiYxIHwgZ3JlcCAtaSByYXRpbmcgfHwgZWNobyAiTkVTU1VOQSBJTU1BR0lORSAncmF0aW5nJyBQUkVTRU5URSIKaGRyICJSRVRJIERPQ0tFUiI7ICAgICAgICAgIGRrIG5ldHdvcmsgbHMgMj4mMQpoZHIgIlJFVEUgdW1icmVsX21haW5fbmV0d29yayI7IGRrIG5ldHdvcmsgaW5zcGVjdCB1bWJyZWxfbWFpbl9uZXR3b3JrIC0tZm9ybWF0ICd7e3JhbmdlIC5Db250YWluZXJzfX17ey5OYW1lfX0ge3suSVB2NEFkZHJlc3N9fXt7IlxuIn19e3tlbmR9fScgMj4mMSB8IGhlYWQgLTQwCgpoZHIgIkFQUC1EQVRBICRBUFAiOyAgICAgICAgbHMgLWxhICIkVU1CL2FwcC1kYXRhLyRBUFAiIDI+JjEKaGRyICJDT01QT1NFIElOU1RBTExBVE8iOyAgIGNhdCAiJFVNQi9hcHAtZGF0YS8kQVBQL2RvY2tlci1jb21wb3NlLnltbCIgMj4mMQpoZHIgIk1BTklGRVNUIElOU1RBTExBVE8iOyAgY2F0ICIkVU1CL2FwcC1kYXRhLyRBUFAvdW1icmVsLWFwcC55bWwiIDI+JjEKaGRyICJBUFAtU1RPUkVTIjsgICAgICAgICAgIGxzIC1sYSAiJFVNQi9hcHAtc3RvcmVzIiAyPiYxCmhkciAiQ09NUE9TRSBORUxMTyBTVE9SRSI7ICBmaW5kICIkVU1CL2FwcC1zdG9yZXMiIC1tYXhkZXB0aCA0IC1wYXRoICIqJEFQUCoiIC1uYW1lICJkb2NrZXItY29tcG9zZS55bWwiIC1wcmludCAtZXhlYyBjYXQge30gXDsgMj4mMQoKaGRyICJQT1JURSBJTiBBU0NPTFRPIjsgICAgIChzcyAtdGxucCAyPi9kZXYvbnVsbCB8fCBzdWRvY21kIHNzIC10bG5wIDI+L2Rldi9udWxsIHx8IG5ldHN0YXQgLXRsbnAgMj4vZGV2L251bGwpIHwgZ3JlcCAtRSAnOig4MDAwfDgwfDQ0M3w4MSkgJyAyPiYxCmhkciAiQ1VSTCAxMjcuMC4wLjE6ODAwMCI7ICBjdXJsIC1zUyAtbyAvZGV2L251bGwgLXcgJ2h0dHBfY29kZT0le2h0dHBfY29kZX0gdGltZT0le3RpbWVfdG90YWx9c1xuJyAtbSA4IGh0dHA6Ly8xMjcuMC4wLjE6ODAwMC8gMj4mMQpoZHIgIkNVUkwgTEFOOjgwMDAiOyAgICAgICAgY3VybCAtc1MgLW8gL2Rldi9udWxsIC13ICdodHRwX2NvZGU9JXtodHRwX2NvZGV9IHRpbWU9JXt0aW1lX3RvdGFsfXNcbicgLW0gOCBodHRwOi8vMTkyLjE2OC4xLjExMjo4MDAwLyAyPiYxCmhkciAiQ1VSTCBJUCBDT05UQUlORVIiOyAgICBJUFM9JChkayBpbnNwZWN0ICIkQ05UIiAtLWZvcm1hdCAne3tyYW5nZSAuTmV0d29ya1NldHRpbmdzLk5ldHdvcmtzfX17ey5JUEFkZHJlc3N9fSB7e2VuZH19JyAyPi9kZXYvbnVsbCk7IGVjaG8gIklQPSRJUFMiOyBmb3IgaSBpbiAkSVBTOyBkbyBjdXJsIC1zUyAtbyAvZGV2L251bGwgLXcgIiRpIC0+IGh0dHBfY29kZT0le2h0dHBfY29kZX1cbiIgLW0gOCAiaHR0cDovLyRpOjgwMDAvIiAyPiYxOyBkb25lCgpoZHIgIkNMT1VERkxBUkVEIjsgICAgICAgICAgZGsgcHMgLWEgLS1mb3JtYXQgJ3t7Lk5hbWVzfX0gfCB7ey5TdGF0dXN9fScgMj4mMSB8IGdyZXAgLWkgY2xvdWRmbGFyZWQgfHwgZWNobyAibmVzc3VuIGNvbnRhaW5lciBjbG91ZGZsYXJlZCIKZm9yIGMgaW4gJChkayBwcyAtYSAtLWZvcm1hdCAne3suTmFtZXN9fScgMj4vZGV2L251bGwgfCBncmVwIC1pIGNsb3VkZmxhcmVkKTsgZG8gZWNobyAiLS0gbG9nICRjIC0tIjsgZGsgbG9ncyAtLXRhaWwgNjAgIiRjIiAyPiYxOyBkb25lCmhkciAiTkdJTlggUFJPWFkgTUFOQUdFUiI7ICBkayBwcyAtYSAtLWZvcm1hdCAne3suTmFtZXN9fSB8IHt7LlN0YXR1c319JyAyPiYxIHwgZ3JlcCAtaUUgJ25naW54fHByb3h5JyB8fCBlY2hvICJuZXNzdW4gcHJveHkiCgpoZHIgIlNFUlZJWkkgVU1CUkVMIjsgICAgICAgc3lzdGVtY3RsIGlzLWFjdGl2ZSB1bWJyZWwgdW1icmVsZCAyPiYxCmhkciAiSk9VUk5BTCBVTUJSRUwiOyAgICAgICBzdWRvY21kIGpvdXJuYWxjdGwgLXUgdW1icmVsIC11IHVtYnJlbGQgLW4gMTUwIC0tbm8tcGFnZXIgMj4mMSB8IHRhaWwgLTE1MApoZHIgIlVNQlJFTCBBUFAgTElTVCI7ICAgICAgIiRVTUIvc2NyaXB0cy9hcHAiIGxpc3QgMj4mMSB8IGhlYWQgLTYwCmhkciAiRklORSBESUFHTk9TVElDQSI= | base64 -d > /tmp/svm_diag.sh; bash /tmp/svm_diag.sh; rm -f /tmp/svm_diag.sh
+=== DIAGNOSTICA axehero-rating-svm-web ===
+docker richiede sudo: 1   UMBREL_DIR=/home/umbrel/umbrel
+
+########## DATA / UPTIME ##########
+Wed Aug 12 20:33:18 UTC 2026
+ 20:33:18 up  6:18,  2 users,  load average: 0.19, 0.15, 0.24
+
+########## SISTEMA ##########
+Linux umbrel 6.18.34+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.18.34-1+rpt1 (2026-06-09) aarch64 GNU/Linux
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+
+########## VERSIONE UMBREL ##########
+
+########## DISCO ##########
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         1.9T  138G  1.6T   8% /
+tmp             4.0G   12M  4.0G   1% /run
+/dev/nvme0n1p1  256M  1.1M  255M   1% /run/rugix/mounts/config
+/dev/nvme0n1p7  1.9T  138G  1.6T   8% /run/rugix/mounts/data
+/dev/nvme0n1p5  4.2G  3.6G  399M  91% /run/rugix/mounts/system
+devtmpfs        3.9G     0  3.9G   0% /dev
+tmpfs           4.0G     0  4.0G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs           4.0G  8.7M  4.0G   1% /tmp
+tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs           1.0M     0  1.0M   0% /run/credentials/serial-getty@ttyAMA10.service
+tmpfs           806M   48K  805M   1% /run/user/1000
+
+########## INODE ##########
+Filesystem        Inodes   IUsed     IFree IUse% Mounted on
+overlay        124338176 1482912 122855264    2% /
+tmp               257616    1715    255901    1% /run
+/dev/nvme0n1p1         0       0         0     - /run/rugix/mounts/config
+/dev/nvme0n1p7 124338176 1482912 122855264    2% /run/rugix/mounts/data
+/dev/nvme0n1p5    275808   99938    175870   37% /run/rugix/mounts/system
+devtmpfs          255498     589    254909    1% /dev
+tmpfs             257616       1    257615    1% /dev/shm
+
+########## MEMORIA ##########
+               total        used        free      shared  buff/cache   available
+Mem:           7.9Gi       3.3Gi       267Mi       206Mi       5.0Gi       4.6Gi
+Swap:          5.9Gi          0B       5.9Gi
+
+########## TEMPERATURA/THROTTLE ##########
+
+########## OOM KILLER ##########
+
+########## DOCKER INFO ##########
+28.5.0
+ Containers: 26
+ Images: 43
+ Storage Driver: overlay2
+
+########## CONTAINER (tutti) ##########
+axehero-jarvis-mission-control_web_1 | Up 6 hours | 8000/tcp | pasmer/axehero-jarvis-mission-control:0.1.0
+axehero-jarvis-mission-control_app_proxy_1 | Up 6 hours | 0.0.0.0:18791->18791/tcp, [::]:18791->18791/tcp | getumbrel/app-proxy:1.7.0
+wealthfolio_server_1 | Up 6 hours (healthy) | 8088/tcp | wealthfolio/wealthfolio:3.6.2
+wealthfolio_app_proxy_1 | Up 6 hours | 0.0.0.0:8880->8880/tcp, [::]:8880->8880/tcp | getumbrel/app-proxy:1.7.0
+nextcloud_cron_1 | Up 6 hours | 80/tcp | nextcloud:34.0.2-apache
+nextcloud_web_1 | Up 6 hours | 80/tcp | nextcloud:34.0.2-apache
+axehero-mariadb_MariaDB_X_1 | Up 6 hours | 0.0.0.0:9306->3306/tcp, [::]:9306->3306/tcp | mariadb:11.6
+hermes-agent_web_1 | Up 6 hours | 18789/tcp | ghcr.io/getumbrel/hermes-agent-umbrel:v2026.8.3
+hermes-agent_app_proxy_1 | Up 6 hours | 0.0.0.0:18790->18790/tcp, [::]:18790->18790/tcp | getumbrel/app-proxy:1.7.0
+radiokot-cloudflared_web_1 | Up 6 hours | 3000/tcp | ghcr.io/radiokot/umbrel-cloudflared:1.0.2
+nextcloud_db_1 | Up 6 hours (healthy) | 3306/tcp | mariadb:10.6.21
+nextcloud_app_proxy_1 | Up 6 hours | 0.0.0.0:8081->8081/tcp, [::]:8081->8081/tcp | getumbrel/app-proxy:1.7.0
+nextcloud_redis_1 | Up 6 hours | 6379/tcp | redis:6.2.2-buster
+pi-hole_server_1 | Up 6 hours (healthy) |  | pihole/pihole:2026.07.2
+radiokot-cloudflared_app_proxy_1 | Up 6 hours | 0.0.0.0:4499->4499/tcp, [::]:4499->4499/tcp | getumbrel/app-proxy:1.7.0
+radiokot-cloudflared_connector_1 | Up 6 hours | 8018/tcp | ghcr.io/radiokot/umbrel-cloudflared-connector:1.0.1-cf.2025.10.0
+italy-dash-web | Up 6 hours | 0.0.0.0:8100->8100/tcp, [::]:8100->8100/tcp | pasmer/italy-dash-web:3.0.0
+tailscale_web_1 | Up 6 hours |  | tailscale/tailscale:v1.98.10
+nginx-proxy-manager_docker-host_1 | Restarting (3) 51 seconds ago |  | qoomon/docker-host:3.3.1
+nginx-proxy-manager_web_1 | Up 6 hours | 81/tcp, 0.0.0.0:40080->80/tcp, [::]:40080->80/tcp, 0.0.0.0:40443->443/tcp, [::]:40443->443/tcp | jc21/nginx-proxy-manager:2.15.1
+nginx-proxy-manager_app_proxy_1 | Up 6 hours | 0.0.0.0:4498->4498/tcp, [::]:4498->4498/tcp | getumbrel/app-proxy:1.7.0
+jellyfin_server_1 | Up 6 hours | 8096/tcp, 0.0.0.0:7359->7359/udp, [::]:7359->7359/udp, 8920/tcp | linuxserver/jellyfin:10.11.11
+jellyfin_app_proxy_1 | Up 6 hours | 0.0.0.0:8096->8096/tcp, [::]:8096->8096/tcp | getumbrel/app-proxy:1.7.0
+phpmyadmin | Up 6 hours | 0.0.0.0:9855->80/tcp, [::]:9855->80/tcp | phpmyadmin
+auth | Up 6 hours | 0.0.0.0:2000->2000/tcp, [::]:2000->2000/tcp | getumbrel/auth-server:1.7.0
+tor_proxy | Up 6 hours |  | ghcr.io/getumbrel/tor:0.4.9.11
+
+########## INSPECT rating-svm-web ##########
+
+Error: No such object: rating-svm-web
+
+########## HEALTH rating-svm-web ##########
+
+Error: No such object: rating-svm-web
+
+########## LOG rating-svm-web (250 righe) ##########
+Error response from daemon: No such container: rating-svm-web
+
+########## IMMAGINI rating ##########
+pasmer/svm-rating                               1.0.1                          b21af8468376   7 months ago    513MB
+
+########## RETI DOCKER ##########
+NETWORK ID     NAME                  DRIVER    SCOPE
+c7a9abb1e9b1   bridge                bridge    local
+ac1484225e3b   host                  host      local
+8bfde0e421a5   none                  null      local
+d620b3b1f63d   umbrel_main_network   bridge    local
+
+########## RETE umbrel_main_network ##########
+wealthfolio_server_1 10.21.0.5/16
+italy-dash-web 10.21.0.8/16
+nextcloud_redis_1 10.21.0.12/16
+radiokot-cloudflared_app_proxy_1 10.21.0.14/16
+axehero-jarvis-mission-control_app_proxy_1 10.21.0.19/16
+auth 10.21.21.6/16
+nextcloud_cron_1 10.21.0.22/16
+nextcloud_web_1 10.21.0.21/16
+axehero-jarvis-mission-control_web_1 10.21.0.13/16
+radiokot-cloudflared_connector_1 10.21.0.9/16
+axehero-mariadb_MariaDB_X_1 10.21.0.11/16
+hermes-agent_web_1 10.21.0.10/16
+nextcloud_db_1 10.21.0.15/16
+radiokot-cloudflared_web_1 10.21.0.20/16
+nginx-proxy-manager_app_proxy_1 10.21.0.6/16
+tor_proxy 10.21.21.11/16
+hermes-agent_app_proxy_1 10.21.0.17/16
+jellyfin_app_proxy_1 10.21.0.4/16
+nextcloud_app_proxy_1 10.21.0.16/16
+jellyfin_server_1 10.21.0.3/16
+wealthfolio_app_proxy_1 10.21.0.18/16
+nginx-proxy-manager_web_1 10.21.0.7/16
+phpmyadmin 10.21.0.2/16
+
+
+########## APP-DATA axehero-rating-svm-web ##########
+total 228
+drwxr-xr-x  2 umbrel umbrel   4096 Jul  1 18:56 .
+drwxr-xr-x 34 umbrel umbrel   4096 Aug 10 13:10 ..
+-rw-r--r--  1 umbrel umbrel    311 Aug 12 14:15 docker-compose.yml
+-rw-r--r--  1 umbrel umbrel 209148 Jan  6  2026 rating.png
+-rw-r--r--  1 root   root       33 Jul  1 18:56 settings.yml
+-rw-r--r--  1 umbrel umbrel    706 Jan  6  2026 umbrel-app.yml
+
+########## COMPOSE INSTALLATO ##########
+version: '3.8'
+services:
+  rating-svm-web:
+    image: pasmer/rating-svm-web:1.0.1
+    container_name: rating-svm-web
+    restart: unless-stopped
+    ports:
+      - '8000:8000'
+    environment:
+      - APP_PROXY=false
+    networks:
+      - umbrel_main_network
+networks:
+  umbrel_main_network:
+    external: true
+
+########## MANIFEST INSTALLATO ##########
+manifestVersion: 1
+id: axehero-rating-svm-web
+category: Finance
+name: CreditRating PMI
+version: "1.0.1"
+description: "Stima Rating Creditizio PMI tramite algoritmo Machine Learning SVM."
+developer: "Pasquale Merella"
+website: "https://www.merella.it"
+support: "https://www.merella.it"
+repo: "https://github.com/pasmer/pro-umbrel-app-store"
+icon: "https://i.ibb.co/3yWX852p/rating.png"
+port: 8000
+path: ""
+torOnly: false 
+defaultUsername: ""
+defaultPassword: ""
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+releaseNotes: >-
+  Release iniziale dell'applicazione di stima rating creditizio.
+permissions: []
+dependencies: []
+submitter: "Pasquale Merella"
+submission: "https://github.com/pasmer/pro-umbrel-app-store"
+
+########## APP-STORES ##########
+total 224
+drwxr-xr-x   17 root   root     4096 Aug 12 01:34 .
+drwxr-xr-x   26 root   root     4096 Aug 12 20:14 ..
+drwxr-xr-x 2928 root   root   106496 Aug 12 01:34 .tmp
+drwxr-xr-x  224 umbrel umbrel  16384 Aug 12 01:34 bigbeartechworld-big-bear-umbrel-github-750db6e8
+drwxr-xr-x    5 umbrel umbrel   4096 Jul  6 02:51 buttonbeaver-beaver-umbrel-app-store-github-db73a44e
+drwxr-xr-x    5 umbrel umbrel   4096 Mar 31 11:39 cloudrack-ca-cloudrack-umbrel-apps-github-11ae5b31
+drwxr-xr-x  331 umbrel umbrel  12288 Aug  2 21:15 dennysubke-dennys-umbrel-app-store-github-ff178134
+drwxr-xr-x    6 umbrel umbrel   4096 Jul  2 01:36 getalby-umbrel-community-app-store-github-4ed90b06
+drwxr-xr-x    6 umbrel umbrel   4096 Dec 11  2024 getalby-umbrel-community-app-store-github-e157780f
+drwxr-xr-x  397 umbrel umbrel  12288 Aug 12 01:04 getumbrel-umbrel-apps-github-53f74447
+drwxr-xr-x  305 umbrel umbrel  12288 Jun 16 23:49 mempool-umbrel-apps-github-728db937
+drwxr-xr-x  305 umbrel umbrel  12288 Jul 20 17:07 mempool-umbrel-apps-github-a29dd824
+drwxr-xr-x  334 umbrel umbrel  12288 Aug  3 02:42 nmfretz-umbrel-apps-fork-github-c080947b
+drwxr-xr-x   18 umbrel umbrel   4096 Aug 10 14:39 pasmer-pro-umbrel-app-store-github-cfc3ab2b
+drwxr-xr-x    4 umbrel umbrel   4096 Jun 25 21:53 radiokot-umbrel-app-store-github-2b10bade
+drwxr-xr-x   39 umbrel umbrel   4096 Jul  8 17:51 reddexx-umbrel-appstore-github-1fa23814
+drwxr-xr-x    6 umbrel umbrel   4096 May 19 22:49 smolgrrr-smolgrrrumbrelapps-github-c775efa6
+
+########## COMPOSE NELLO STORE ##########
+***PASSWORD***
+/home/umbrel/umbrel/app-stores/pasmer-pro-umbrel-app-store-github-cfc3ab2b/axehero-rating-svm-web/docker-compose.yml
+version: "3.8"
+
+services:
+  rating-svm-web:
+    image: pasmer/rating-svm-web:1.0.1
+    container_name: rating-svm-web
+    restart: unless-stopped
+    ports:
+      - "8000:8000" # riesponi le porte
+    environment:
+      - APP_PROXY=false
+    networks:
+      - umbrel_main_network
+
+networks:
+  umbrel_main_network:
+    external: true
+
+########## PORTE IN ASCOLTO ##########
+LISTEN 0      4096                 100.98.242.35:443        0.0.0.0:*          
+LISTEN 0      4096   [fd7a:115c:a1e0::c601:f225]:443           [::]:*          
+LISTEN 0      511                              *:80               *:*          
+
+########## CURL 127.0.0.1:8000 ##########
+curl: (7) Failed to connect to 127.0.0.1 port 8000 after 0 ms: Could not connect to server
+http_code=000 time=0.000153s
+
+########## CURL LAN:8000 ##########
+curl: (7) Failed to connect to 192.168.1.112 port 8000 after 0 ms: Could not connect to server
+http_code=000 time=0.000138s
+
+########## CURL IP CONTAINER ##########
+IP=
+
+########## CLOUDFLARED ##########
+radiokot-cloudflared_web_1 | Up 6 hours
+radiokot-cloudflared_app_proxy_1 | Up 6 hours
+radiokot-cloudflared_connector_1 | Up 6 hours
+-- log radiokot-cloudflared_web_1 --
+Listening on 0.0.0.0:3000
+-- log radiokot-cloudflared_app_proxy_1 --
+yarn run v1.22.19
+$ node ./bin/www
+[HPM] Proxy created: /  -> http://radiokot-cloudflared-web:3000
+Waiting for radiokot-cloudflared-web:3000 to open...
+Cloudflare Tunnel is now ready...
+Listening on port: 4499
+-- log radiokot-cloudflared_connector_1 --
+PROCESS: starting
+2026-08-12T14:15:16Z INF Starting tunnel tunnelID=9d32b66d-315a-4be2-a8f8-0e6711ddbf25
+2026-08-12T14:15:16Z INF Version 2025.10.0 (Checksum 3ac20a6216893788926148620c866753ec2795901b1232fed464df9cf4f455c9)
+2026-08-12T14:15:16Z INF GOOS: linux, GOVersion: go1.24.4, GoArch: arm64
+2026-08-12T14:15:16Z INF Settings: map[management-diagnostics:false metrics:0.0.0.0:40901 no-autoupdate:true]
+2026-08-12T14:15:16Z INF Environmental variables map[TUNNEL_TOKEN:*****]
+2026-08-12T14:15:16Z INF Generated Connector ID: ea1be654-7976-49e3-bf79-3b5e06cfd84a
+2026-08-12T14:15:16Z INF Initial protocol quic
+2026-08-12T14:15:16Z INF ICMP proxy will use 10.21.0.9 as source for IPv4
+2026-08-12T14:15:16Z INF ICMP proxy will use ::1 in zone lo as source for IPv6
+2026-08-12T14:15:17Z ERR Cannot determine default origin certificate path. No file cert.pem in [~/.cloudflared ~/.cloudflare-warp ~/cloudflare-warp /etc/cloudflared /usr/local/etc/cloudflared]. You need to specify the origin certificate path by specifying the origincert option in the configuration file, or set TUNNEL_ORIGIN_CERT environment variable originCertPath=
+2026-08-12T14:15:17Z INF ICMP proxy will use 10.21.0.9 as source for IPv4
+2026-08-12T14:15:17Z INF ICMP proxy will use ::1 in zone lo as source for IPv6
+2026-08-12T14:15:17Z INF Starting metrics server on [::]:40901/metrics
+2026-08-12T14:15:17Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.200.23
+2026-08-12T14:15:17Z INF Registered tunnel connection connIndex=0 connection=6a6610e7-6dc5-43c1-932f-96dacb528ee6 event=0 ip=198.41.200.23 location=fco01 protocol=quic
+2026-08-12T14:15:17Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=1 event=0 ip=198.41.192.107
+2026-08-12T14:15:17Z INF Updated to new configuration config="{\"ingress\":[{\"hostname\":\"umbrel.merella.it\",\"originRequest\":{\"disableChunkedEncoding\":false,\"httpHostHeader\":\"192.168.1.112\",\"noHappyEyeballs\":false,\"proxyType\":\"\"},\"service\":\"http://192.168.1.112\"},{\"hostname\":\"only.merella.it\",\"originRequest\":{},\"service\":\"http://192.168.1.112:3014\"},{\"hostname\":\"onlyoffice.merella.it\",\"originRequest\":{},\"service\":\"http://192.168.1.112:5672\"},{\"hostname\":\"office.merella.it\",\"originRequest\":{},\"service\":\"http://192.168.1.112:8081\"},{\"hostname\":\"dns.merella.it\",\"originRequest\":{},\"service\":\"http://192.168.1.112:8082\"},{\"hostname\":\"dockage.merella.it\",\"originRequest\":{},\"service\":\"http://192.168.1.112:5005\"},{\"hostname\":\"chart.merella.it\",\"originRequest\":{},\"service\":\"http://192.168.1.112:3030\"},{\"hostname\":\"home.merella.it\",\"originRequest\":{\"access\":{\"audTag\":[\"9a262d236ca875e46da1ec6ef8831343245df66c9f13feef0bebab6a42ffde9a\"],\"required\":true,\"teamName\":\"smartinstitute\"}},\"service\":\"http://192.168.1.112:7204\"},{\"hostname\":\"secure.merella.it\",\"originRequest\":{\"access\":{\"audTag\":[\"9a262d236ca875e46da1ec6ef8831343245df66c9f13feef0bebab6a42ffde9a\"],\"required\":true,\"teamName\":\"smartinstitute\"}},\"service\":\"http://192.168.1.112:8240\"},{\"hostname\":\"n8n.merella.it\",\"originRequest\":{},\"service\":\"http://192.168.1.112:5678\"},{\"hostname\":\"jelly.merella.it\",\"originRequest\":{},\"service\":\"http://192.168.1.112:8096\"},{\"hostname\":\"mailing.merella.it\",\"originRequest\":{},\"service\":\"http://192.168.1.112:9000\"},{\"hostname\":\"wetransfer.merella.it\",\"originRequest\":{},\"service\":\"http://192.168.1.112:52443\"},{\"hostname\":\"buzz.merella.it\",\"service\":\"http://192.168.1.112:3399\"},{\"service\":\"http_status:404\"}],\"warp-routing\":{\"enabled\":true}}" version=110
+2026-08-12T14:15:18Z INF Registered tunnel connection connIndex=1 connection=fcd8fc04-d344-431f-aa03-4f94846e6557 event=0 ip=198.41.192.107 location=mxp06 protocol=quic
+2026-08-12T14:15:18Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=2 event=0 ip=198.41.192.37
+2026-08-12T14:15:19Z INF Registered tunnel connection connIndex=2 connection=b41bd0fa-556f-4b7b-ab17-e7fbdee50ad5 event=0 ip=198.41.192.37 location=mxp01 protocol=quic
+2026-08-12T14:15:19Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=3 event=0 ip=198.41.200.53
+2026-08-12T14:15:19Z INF Registered tunnel connection connIndex=3 connection=35949d83-17c7-4316-b0ab-3f21962b5808 event=0 ip=198.41.200.53 location=fco01 protocol=quic
+2026-08-12T17:14:32Z ERR  error="stream 225 canceled by remote with error code 0" connIndex=2 event=1 ingressRule=10 originService=http://192.168.1.112:8096
+2026-08-12T17:14:32Z ERR Request failed error="stream 225 canceled by remote with error code 0" connIndex=2 dest=https://jelly.merella.it/Videos/78e70f37-9194-8251-dd3f-ff25b5ca7249/stream?container=mkv&static=true&tag=32dddc388a173bc6d8c09f0de88bac25&mediaSourceId=78e70f3791948251dd3fff25b5ca7249&streamOptions=%7B%7D&enableAudioVbrEncoding=true event=0 ip=198.41.192.37 type=http
+2026-08-12T17:15:13Z ERR  error="stream 237 canceled by remote with error code 0" connIndex=2 event=1 ingressRule=10 originService=http://192.168.1.112:8096
+2026-08-12T17:15:13Z ERR Request failed error="stream 237 canceled by remote with error code 0" connIndex=2 dest=https://jelly.merella.it/Videos/78e70f37-9194-8251-dd3f-ff25b5ca7249/stream?container=mkv&static=true&tag=32dddc388a173bc6d8c09f0de88bac25&mediaSourceId=78e70f3791948251dd3fff25b5ca7249&streamOptions=%7B%7D&enableAudioVbrEncoding=true event=0 ip=198.41.192.37 type=http
+2026-08-12T17:15:22Z ERR  error="stream 297 canceled by remote with error code 0" connIndex=2 event=1 ingressRule=10 originService=http://192.168.1.112:8096
+2026-08-12T17:15:22Z ERR Request failed error="stream 297 canceled by remote with error code 0" connIndex=2 dest=https://jelly.merella.it/Videos/78e70f37-9194-8251-dd3f-ff25b5ca7249/stream?container=mkv&static=true&tag=32dddc388a173bc6d8c09f0de88bac25&mediaSourceId=78e70f3791948251dd3fff25b5ca7249&streamOptions=%7B%7D&enableAudioVbrEncoding=true event=0 ip=198.41.192.37 type=http
+2026-08-12T17:15:23Z ERR  error="stream 313 canceled by remote with error code 0" connIndex=2 event=1 ingressRule=10 originService=http://192.168.1.112:8096
+2026-08-12T17:15:23Z ERR Request failed error="stream 313 canceled by remote with error code 0" connIndex=2 dest=https://jelly.merella.it/Videos/78e70f37-9194-8251-dd3f-ff25b5ca7249/stream?container=mkv&static=true&tag=32dddc388a173bc6d8c09f0de88bac25&mediaSourceId=78e70f3791948251dd3fff25b5ca7249&streamOptions=%7B%7D&enableAudioVbrEncoding=true event=0 ip=198.41.192.37 type=http
+2026-08-12T17:15:47Z ERR  error="stream 317 canceled by remote with error code 0" connIndex=2 event=1 ingressRule=10 originService=http://192.168.1.112:8096
+2026-08-12T17:15:47Z ERR Request failed error="stream 317 canceled by remote with error code 0" connIndex=2 dest=https://jelly.merella.it/Videos/78e70f37-9194-8251-dd3f-ff25b5ca7249/stream?container=mkv&static=true&tag=32dddc388a173bc6d8c09f0de88bac25&mediaSourceId=78e70f3791948251dd3fff25b5ca7249&streamOptions=%7B%7D&enableAudioVbrEncoding=true event=0 ip=198.41.192.37 type=http
+2026-08-12T17:55:38Z ERR  error="stream 353 canceled by remote with error code 0" connIndex=2 event=1 ingressRule=10 originService=http://192.168.1.112:8096
+2026-08-12T17:55:38Z ERR Request failed error="stream 353 canceled by remote with error code 0" connIndex=2 dest=https://jelly.merella.it/Videos/78e70f37-9194-8251-dd3f-ff25b5ca7249/stream?container=mkv&static=true&tag=32dddc388a173bc6d8c09f0de88bac25&mediaSourceId=78e70f3791948251dd3fff25b5ca7249&streamOptions=%7B%7D&enableAudioVbrEncoding=true event=0 ip=198.41.192.37 type=http
+2026-08-12T18:04:07Z ERR  error="stream 3525 canceled by remote with error code 0" connIndex=2 event=1 ingressRule=10 originService=http://192.168.1.112:8096
+2026-08-12T18:04:07Z ERR Request failed error="stream 3525 canceled by remote with error code 0" connIndex=2 dest=https://jelly.merella.it/Videos/78e70f37-9194-8251-dd3f-ff25b5ca7249/stream?container=mkv&static=true&tag=32dddc388a173bc6d8c09f0de88bac25&mediaSourceId=78e70f3791948251dd3fff25b5ca7249&streamOptions=%7B%7D&enableAudioVbrEncoding=true event=0 ip=198.41.192.37 type=http
+2026-08-12T19:17:08Z ERR  error="stream 4665 canceled by remote with error code 0" connIndex=2 event=1 ingressRule=10 originService=http://192.168.1.112:8096
+2026-08-12T19:17:08Z ERR Request failed error="stream 4665 canceled by remote with error code 0" connIndex=2 dest=https://jelly.merella.it/Videos/78e70f37-9194-8251-dd3f-ff25b5ca7249/stream?container=mkv&static=true&tag=32dddc388a173bc6d8c09f0de88bac25&mediaSourceId=78e70f3791948251dd3fff25b5ca7249&streamOptions=%7B%7D&enableAudioVbrEncoding=true event=0 ip=198.41.192.37 type=http
+2026-08-12T19:19:00Z ERR  error="stream 8017 canceled by remote with error code 0" connIndex=2 event=1 ingressRule=10 originService=http://192.168.1.112:8096
+2026-08-12T19:19:00Z ERR Request failed error="stream 8017 canceled by remote with error code 0" connIndex=2 dest=https://jelly.merella.it/Videos/78e70f37-9194-8251-dd3f-ff25b5ca7249/stream?container=mkv&static=true&tag=32dddc388a173bc6d8c09f0de88bac25&mediaSourceId=78e70f3791948251dd3fff25b5ca7249&streamOptions=%7B%7D&enableAudioVbrEncoding=true event=0 ip=198.41.192.37 type=http
+2026-08-12T19:41:12Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 192.168.1.112:9000: connect: connection refused" connIndex=3 event=1 ingressRule=11 originService=http://192.168.1.112:9000
+2026-08-12T19:41:12Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 192.168.1.112:9000: connect: connection refused" connIndex=3 dest=https://mailing.merella.it/robots.txt event=0 ip=198.41.200.53 type=http
+
+########## NGINX PROXY MANAGER ##########
+axehero-jarvis-mission-control_app_proxy_1 | Up 6 hours
+wealthfolio_app_proxy_1 | Up 6 hours
+hermes-agent_app_proxy_1 | Up 6 hours
+nextcloud_app_proxy_1 | Up 6 hours
+radiokot-cloudflared_app_proxy_1 | Up 6 hours
+nginx-proxy-manager_docker-host_1 | Restarting (3) 52 seconds ago
+nginx-proxy-manager_web_1 | Up 6 hours
+nginx-proxy-manager_app_proxy_1 | Up 6 hours
+jellyfin_app_proxy_1 | Up 6 hours
+tor_proxy | Up 6 hours
+
+########## SERVIZI UMBREL ##########
+active
+inactive
+
+########## JOURNAL UMBREL ##########
+Aug 12 20:10:11 umbrel umbreld[784]: [apprepository           ] https://github.com/mempool/umbrel-apps is already up to date
+Aug 12 20:10:12 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/mempool/umbrel-apps.git
+Aug 12 20:10:12 umbrel umbreld[784]: [apprepository           ] https://github.com/mempool/umbrel-apps.git is already up to date
+Aug 12 20:10:12 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/nmfretz/umbrel-apps-fork.git
+Aug 12 20:10:13 umbrel umbreld[784]: [apprepository           ] https://github.com/nmfretz/umbrel-apps-fork.git is already up to date
+Aug 12 20:10:13 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/reddexx/umbrel-AppStore
+Aug 12 20:10:13 umbrel umbreld[784]: [apprepository           ] https://github.com/reddexx/umbrel-AppStore is already up to date
+Aug 12 20:10:14 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/cloudrack-ca/cloudrack-umbrel-apps
+Aug 12 20:10:14 umbrel umbreld[784]: [apprepository           ] https://github.com/cloudrack-ca/cloudrack-umbrel-apps is already up to date
+Aug 12 20:10:14 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/buttonbeaver/beaver-umbrel-app-store.git
+Aug 12 20:10:15 umbrel umbreld[784]: [apprepository           ] https://github.com/buttonbeaver/beaver-umbrel-app-store.git is already up to date
+Aug 12 20:10:15 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/pasmer/pro-umbrel-app-store.git
+Aug 12 20:10:16 umbrel umbreld[784]: [apprepository           ] https://github.com/pasmer/pro-umbrel-app-store.git is already up to date
+Aug 12 20:10:16 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/dennysubke/dennys-umbrel-app-store
+Aug 12 20:10:16 umbrel umbreld[784]: [apprepository           ] https://github.com/dennysubke/dennys-umbrel-app-store is already up to date
+Aug 12 20:10:17 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/smolgrrr/smolgrrr_umbrel_apps
+Aug 12 20:10:17 umbrel umbreld[784]: [apprepository           ] https://github.com/smolgrrr/smolgrrr_umbrel_apps is already up to date
+Aug 12 20:10:17 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/getAlby/umbrel-community-app-store
+Aug 12 20:10:18 umbrel umbreld[784]: [apprepository           ] https://github.com/getAlby/umbrel-community-app-store is already up to date
+Aug 12 20:10:47 umbrel umbreld[784]: [files:watcher           ] [error] Health check failed: watcher did not deliver sentinel event within timeout. Recovering...
+Aug 12 20:10:47 umbrel umbreld[784]: [files:watcher           ] Started watching directory '/Home'
+Aug 12 20:10:47 umbrel umbreld[784]: [files:watcher           ] Started watching directory '/Trash'
+Aug 12 20:10:47 umbrel umbreld[784]: [files:watcher           ] Started watching directory '/Apps'
+Aug 12 20:11:26 umbrel umbreld[784]: [appstore                ] [error] Failed to read registry from https://github.com/mempool/umbrel-apps
+Aug 12 20:11:26 umbrel umbreld[784]: [Error: ENOENT: no such file or directory, open '/home/umbrel/umbrel/app-stores/mempool-umbrel-apps-github-a29dd824/umbrel-app-store.yml'] {
+Aug 12 20:11:26 umbrel umbreld[784]:   errno: -2,
+Aug 12 20:11:26 umbrel umbreld[784]:   code: 'ENOENT',
+Aug 12 20:11:26 umbrel umbreld[784]:   syscall: 'open',
+Aug 12 20:11:26 umbrel umbreld[784]:   path: '/home/umbrel/umbrel/app-stores/mempool-umbrel-apps-github-a29dd824/umbrel-app-store.yml'
+Aug 12 20:11:26 umbrel umbreld[784]: }
+Aug 12 20:11:26 umbrel umbreld[784]: [appstore                ] [error] Failed to read registry from https://github.com/mempool/umbrel-apps.git
+Aug 12 20:11:26 umbrel umbreld[784]: [Error: ENOENT: no such file or directory, open '/home/umbrel/umbrel/app-stores/mempool-umbrel-apps-github-728db937/umbrel-app-store.yml'] {
+Aug 12 20:11:26 umbrel umbreld[784]:   errno: -2,
+Aug 12 20:11:26 umbrel umbreld[784]:   code: 'ENOENT',
+Aug 12 20:11:26 umbrel umbreld[784]:   syscall: 'open',
+Aug 12 20:11:26 umbrel umbreld[784]:   path: '/home/umbrel/umbrel/app-stores/mempool-umbrel-apps-github-728db937/umbrel-app-store.yml'
+Aug 12 20:11:26 umbrel umbreld[784]: }
+Aug 12 20:11:26 umbrel umbreld[784]: [appstore                ] [error] Failed to read registry from https://github.com/nmfretz/umbrel-apps-fork.git
+Aug 12 20:11:26 umbrel umbreld[784]: [Error: ENOENT: no such file or directory, open '/home/umbrel/umbrel/app-stores/nmfretz-umbrel-apps-fork-github-c080947b/umbrel-app-store.yml'] {
+Aug 12 20:11:26 umbrel umbreld[784]:   errno: -2,
+Aug 12 20:11:26 umbrel umbreld[784]:   code: 'ENOENT',
+Aug 12 20:11:26 umbrel umbreld[784]:   syscall: 'open',
+Aug 12 20:11:26 umbrel umbreld[784]:   path: '/home/umbrel/umbrel/app-stores/nmfretz-umbrel-apps-fork-github-c080947b/umbrel-app-store.yml'
+Aug 12 20:11:26 umbrel umbreld[784]: }
+Aug 12 20:15:08 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/getumbrel/umbrel-apps.git
+Aug 12 20:15:09 umbrel umbreld[784]: [apprepository           ] https://github.com/getumbrel/umbrel-apps.git is already up to date
+Aug 12 20:15:09 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/Radiokot/umbrel-app-store.git
+Aug 12 20:15:10 umbrel umbreld[784]: [apprepository           ] https://github.com/Radiokot/umbrel-app-store.git is already up to date
+Aug 12 20:15:10 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/bigbeartechworld/big-bear-umbrel
+Aug 12 20:15:10 umbrel umbreld[784]: [apprepository           ] https://github.com/bigbeartechworld/big-bear-umbrel is already up to date
+Aug 12 20:15:11 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/mempool/umbrel-apps
+Aug 12 20:15:11 umbrel umbreld[784]: [apprepository           ] https://github.com/mempool/umbrel-apps is already up to date
+Aug 12 20:15:12 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/mempool/umbrel-apps.git
+Aug 12 20:15:12 umbrel umbreld[784]: [apprepository           ] https://github.com/mempool/umbrel-apps.git is already up to date
+Aug 12 20:15:12 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/nmfretz/umbrel-apps-fork.git
+Aug 12 20:15:13 umbrel umbreld[784]: [apprepository           ] https://github.com/nmfretz/umbrel-apps-fork.git is already up to date
+Aug 12 20:15:13 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/reddexx/umbrel-AppStore
+Aug 12 20:15:13 umbrel umbreld[784]: [apprepository           ] https://github.com/reddexx/umbrel-AppStore is already up to date
+Aug 12 20:15:14 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/cloudrack-ca/cloudrack-umbrel-apps
+Aug 12 20:15:14 umbrel umbreld[784]: [apprepository           ] https://github.com/cloudrack-ca/cloudrack-umbrel-apps is already up to date
+Aug 12 20:15:15 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/buttonbeaver/beaver-umbrel-app-store.git
+Aug 12 20:15:15 umbrel umbreld[784]: [apprepository           ] https://github.com/buttonbeaver/beaver-umbrel-app-store.git is already up to date
+Aug 12 20:15:16 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/pasmer/pro-umbrel-app-store.git
+Aug 12 20:15:16 umbrel umbreld[784]: [apprepository           ] https://github.com/pasmer/pro-umbrel-app-store.git is already up to date
+Aug 12 20:15:17 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/dennysubke/dennys-umbrel-app-store
+Aug 12 20:15:17 umbrel umbreld[784]: [apprepository           ] https://github.com/dennysubke/dennys-umbrel-app-store is already up to date
+Aug 12 20:15:17 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/smolgrrr/smolgrrr_umbrel_apps
+Aug 12 20:15:18 umbrel umbreld[784]: [apprepository           ] https://github.com/smolgrrr/smolgrrr_umbrel_apps is already up to date
+Aug 12 20:15:18 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/getAlby/umbrel-community-app-store
+Aug 12 20:15:18 umbrel umbreld[784]: [apprepository           ] https://github.com/getAlby/umbrel-community-app-store is already up to date
+Aug 12 20:15:26 umbrel umbreld[784]: [backups                 ] Running backups interval
+Aug 12 20:15:26 umbrel umbreld[784]: [backups                 ] Backups interval complete
+Aug 12 20:20:08 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/getumbrel/umbrel-apps.git
+Aug 12 20:20:09 umbrel umbreld[784]: [apprepository           ] https://github.com/getumbrel/umbrel-apps.git is already up to date
+Aug 12 20:20:09 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/Radiokot/umbrel-app-store.git
+Aug 12 20:20:10 umbrel umbreld[784]: [apprepository           ] https://github.com/Radiokot/umbrel-app-store.git is already up to date
+Aug 12 20:20:10 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/bigbeartechworld/big-bear-umbrel
+Aug 12 20:20:10 umbrel umbreld[784]: [apprepository           ] https://github.com/bigbeartechworld/big-bear-umbrel is already up to date
+Aug 12 20:20:11 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/mempool/umbrel-apps
+Aug 12 20:20:11 umbrel umbreld[784]: [apprepository           ] https://github.com/mempool/umbrel-apps is already up to date
+Aug 12 20:20:12 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/mempool/umbrel-apps.git
+Aug 12 20:20:12 umbrel umbreld[784]: [apprepository           ] https://github.com/mempool/umbrel-apps.git is already up to date
+Aug 12 20:20:12 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/nmfretz/umbrel-apps-fork.git
+Aug 12 20:20:13 umbrel umbreld[784]: [apprepository           ] https://github.com/nmfretz/umbrel-apps-fork.git is already up to date
+Aug 12 20:20:13 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/reddexx/umbrel-AppStore
+Aug 12 20:20:14 umbrel umbreld[784]: [apprepository           ] https://github.com/reddexx/umbrel-AppStore is already up to date
+Aug 12 20:20:14 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/cloudrack-ca/cloudrack-umbrel-apps
+Aug 12 20:20:14 umbrel umbreld[784]: [apprepository           ] https://github.com/cloudrack-ca/cloudrack-umbrel-apps is already up to date
+Aug 12 20:20:15 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/buttonbeaver/beaver-umbrel-app-store.git
+Aug 12 20:20:15 umbrel umbreld[784]: [apprepository           ] https://github.com/buttonbeaver/beaver-umbrel-app-store.git is already up to date
+Aug 12 20:20:15 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/pasmer/pro-umbrel-app-store.git
+Aug 12 20:20:16 umbrel umbreld[784]: [apprepository           ] https://github.com/pasmer/pro-umbrel-app-store.git is already up to date
+Aug 12 20:20:17 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/dennysubke/dennys-umbrel-app-store
+Aug 12 20:20:17 umbrel umbreld[784]: [apprepository           ] https://github.com/dennysubke/dennys-umbrel-app-store is already up to date
+Aug 12 20:20:18 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/smolgrrr/smolgrrr_umbrel_apps
+Aug 12 20:20:18 umbrel umbreld[784]: [apprepository           ] https://github.com/smolgrrr/smolgrrr_umbrel_apps is already up to date
+Aug 12 20:20:19 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/getAlby/umbrel-community-app-store
+Aug 12 20:20:19 umbrel umbreld[784]: [apprepository           ] https://github.com/getAlby/umbrel-community-app-store is already up to date
+Aug 12 20:25:08 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/getumbrel/umbrel-apps.git
+Aug 12 20:25:09 umbrel umbreld[784]: [apprepository           ] https://github.com/getumbrel/umbrel-apps.git is already up to date
+Aug 12 20:25:09 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/Radiokot/umbrel-app-store.git
+Aug 12 20:25:10 umbrel umbreld[784]: [apprepository           ] https://github.com/Radiokot/umbrel-app-store.git is already up to date
+Aug 12 20:25:10 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/bigbeartechworld/big-bear-umbrel
+Aug 12 20:25:10 umbrel umbreld[784]: [apprepository           ] https://github.com/bigbeartechworld/big-bear-umbrel is already up to date
+Aug 12 20:25:11 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/mempool/umbrel-apps
+Aug 12 20:25:11 umbrel umbreld[784]: [apprepository           ] https://github.com/mempool/umbrel-apps is already up to date
+Aug 12 20:25:12 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/mempool/umbrel-apps.git
+Aug 12 20:25:12 umbrel umbreld[784]: [apprepository           ] https://github.com/mempool/umbrel-apps.git is already up to date
+Aug 12 20:25:12 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/nmfretz/umbrel-apps-fork.git
+Aug 12 20:25:13 umbrel umbreld[784]: [apprepository           ] https://github.com/nmfretz/umbrel-apps-fork.git is already up to date
+Aug 12 20:25:13 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/reddexx/umbrel-AppStore
+Aug 12 20:25:13 umbrel umbreld[784]: [apprepository           ] https://github.com/reddexx/umbrel-AppStore is already up to date
+Aug 12 20:25:14 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/cloudrack-ca/cloudrack-umbrel-apps
+Aug 12 20:25:14 umbrel umbreld[784]: [apprepository           ] https://github.com/cloudrack-ca/cloudrack-umbrel-apps is already up to date
+Aug 12 20:25:15 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/buttonbeaver/beaver-umbrel-app-store.git
+Aug 12 20:25:15 umbrel umbreld[784]: [apprepository           ] https://github.com/buttonbeaver/beaver-umbrel-app-store.git is already up to date
+Aug 12 20:25:15 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/pasmer/pro-umbrel-app-store.git
+Aug 12 20:25:16 umbrel umbreld[784]: [apprepository           ] https://github.com/pasmer/pro-umbrel-app-store.git is already up to date
+Aug 12 20:25:16 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/dennysubke/dennys-umbrel-app-store
+Aug 12 20:25:16 umbrel umbreld[784]: [apprepository           ] https://github.com/dennysubke/dennys-umbrel-app-store is already up to date
+Aug 12 20:25:17 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/smolgrrr/smolgrrr_umbrel_apps
+Aug 12 20:25:17 umbrel umbreld[784]: [apprepository           ] https://github.com/smolgrrr/smolgrrr_umbrel_apps is already up to date
+Aug 12 20:25:18 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/getAlby/umbrel-community-app-store
+Aug 12 20:25:18 umbrel umbreld[784]: [apprepository           ] https://github.com/getAlby/umbrel-community-app-store is already up to date
+Aug 12 20:30:08 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/getumbrel/umbrel-apps.git
+Aug 12 20:30:09 umbrel umbreld[784]: [apprepository           ] https://github.com/getumbrel/umbrel-apps.git is already up to date
+Aug 12 20:30:10 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/Radiokot/umbrel-app-store.git
+Aug 12 20:30:10 umbrel umbreld[784]: [apprepository           ] https://github.com/Radiokot/umbrel-app-store.git is already up to date
+Aug 12 20:30:10 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/bigbeartechworld/big-bear-umbrel
+Aug 12 20:30:11 umbrel umbreld[784]: [apprepository           ] https://github.com/bigbeartechworld/big-bear-umbrel is already up to date
+Aug 12 20:30:11 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/mempool/umbrel-apps
+Aug 12 20:30:12 umbrel umbreld[784]: [apprepository           ] https://github.com/mempool/umbrel-apps is already up to date
+Aug 12 20:30:12 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/mempool/umbrel-apps.git
+Aug 12 20:30:12 umbrel umbreld[784]: [apprepository           ] https://github.com/mempool/umbrel-apps.git is already up to date
+Aug 12 20:30:13 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/nmfretz/umbrel-apps-fork.git
+Aug 12 20:30:13 umbrel umbreld[784]: [apprepository           ] https://github.com/nmfretz/umbrel-apps-fork.git is already up to date
+Aug 12 20:30:14 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/reddexx/umbrel-AppStore
+Aug 12 20:30:14 umbrel umbreld[784]: [apprepository           ] https://github.com/reddexx/umbrel-AppStore is already up to date
+Aug 12 20:30:14 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/cloudrack-ca/cloudrack-umbrel-apps
+Aug 12 20:30:15 umbrel umbreld[784]: [apprepository           ] https://github.com/cloudrack-ca/cloudrack-umbrel-apps is already up to date
+Aug 12 20:30:15 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/buttonbeaver/beaver-umbrel-app-store.git
+Aug 12 20:30:16 umbrel umbreld[784]: [apprepository           ] https://github.com/buttonbeaver/beaver-umbrel-app-store.git is already up to date
+Aug 12 20:30:16 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/pasmer/pro-umbrel-app-store.git
+Aug 12 20:30:16 umbrel umbreld[784]: [apprepository           ] https://github.com/pasmer/pro-umbrel-app-store.git is already up to date
+Aug 12 20:30:17 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/dennysubke/dennys-umbrel-app-store
+Aug 12 20:30:17 umbrel umbreld[784]: [apprepository           ] https://github.com/dennysubke/dennys-umbrel-app-store is already up to date
+Aug 12 20:30:17 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/smolgrrr/smolgrrr_umbrel_apps
+Aug 12 20:30:18 umbrel umbreld[784]: [apprepository           ] https://github.com/smolgrrr/smolgrrr_umbrel_apps is already up to date
+Aug 12 20:30:18 umbrel umbreld[784]: [apprepository           ] Checking for update for https://github.com/getAlby/umbrel-community-app-store
+Aug 12 20:30:19 umbrel umbreld[784]: [apprepository           ] https://github.com/getAlby/umbrel-community-app-store is already up to date
+
+########## UMBREL APP LIST ##########
+/tmp/svm_diag.sh: line 49: /home/umbrel/umbrel/scripts/app: No such file or directory
+
+########## FINE DIAGNOSTICA ##########

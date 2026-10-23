@@ -1,0 +1,139 @@
+spawn ssh -tt -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=ERROR -o ConnectTimeout=15 -p 22 umbrel@192.168.1.112 export SUDOPW='***PASSWORD***'; echo IyEvYmluL2Jhc2gKQVBQPWF4ZWhlcm8tcmF0aW5nLXN2bS13ZWIKQ05UPXJhdGluZy1zdm0td2ViClVNQj0iJEhPTUUvdW1icmVsIjsgWyAtZCAiJFVNQiIgXSB8fCBVTUI9L2hvbWUvdW1icmVsL3VtYnJlbApDRElSPSIkVU1CL2FwcC1kYXRhLyRBUFAiCgppZiBkb2NrZXIgcHMgPi9kZXYvbnVsbCAyPiYxOyB0aGVuIE5FRURTVURPPTA7IGVsc2UgTkVFRFNVRE89MTsgZmkKZGsoKXsgaWYgWyAiJE5FRURTVURPIiA9ICIwIiBdOyB0aGVuIGRvY2tlciAiJEAiOyBlbHNlIHByaW50ZiAnJXNcbicgIiRTVURPUFciIHwgc3VkbyAtUyAtcCAnJyBkb2NrZXIgIiRAIjsgZmk7IH0KaGRyKCl7IGVjaG87IGVjaG8gIiMjIyMjIyMjIyMgJCogIyMjIyMjIyMjIyI7IH0KCmVjaG8gIj09PSBGSVggYXhlaGVyby1yYXRpbmctc3ZtLXdlYiAgKCQoZGF0ZSkpID09PSIKCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAxLiBIdWIgY2hlY2sKaGRyICIxLiBWRVJJRklDQSBOT01JIFNVIERPQ0tFUiBIVUIiCmh1Yl9oYXMoKXsgIyAkMSA9IHJlcG8sICQyID0gdGFnCiAgbG9jYWwgdG9rCiAgdG9rPSQoY3VybCAtc1MgLW0gMjAgImh0dHBzOi8vYXV0aC5kb2NrZXIuaW8vdG9rZW4/c2VydmljZT1yZWdpc3RyeS5kb2NrZXIuaW8mc2NvcGU9cmVwb3NpdG9yeTokMTpwdWxsIiAgICAgICAgIHwgc2VkIC1uICdzLy4qInRva2VuIjoiXChbXiJdKlwpIi4qL1wxL3AnKQogIFsgLW4gIiR0b2siIF0gfHwgcmV0dXJuIDEKICBjdXJsIC1zUyAtbSAyMCAtbyAvZGV2L251bGwgLXcgJyV7aHR0cF9jb2RlfScgICAgICAgIC1IICJBdXRob3JpemF0aW9uOiBCZWFyZXIgJHRvayIgICAgICAgIC1IICJBY2NlcHQ6IGFwcGxpY2F0aW9uL3ZuZC5vY2kuaW1hZ2UuaW5kZXgudjEranNvbixhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmRpc3RyaWJ1dGlvbi5tYW5pZmVzdC5saXN0LnYyK2pzb24sYXBwbGljYXRpb24vdm5kLmRvY2tlci5kaXN0cmlidXRpb24ubWFuaWZlc3QudjIranNvbiIgICAgICAgICJodHRwczovL3JlZ2lzdHJ5LTEuZG9ja2VyLmlvL3YyLyQxL21hbmlmZXN0cy8kMiIgfCBncmVwIC1xICdeMjAwJCcKfQpIVUJfQT1OTzsgSFVCX0I9Tk8KaHViX2hhcyBwYXNtZXIvcmF0aW5nLXN2bS13ZWIgMS4wLjEgJiYgSFVCX0E9U0kKaHViX2hhcyBwYXNtZXIvc3ZtLXJhdGluZyAgICAgMS4wLjEgJiYgSFVCX0I9U0kKZWNobyAicGFzbWVyL3JhdGluZy1zdm0td2ViOjEuMC4xIHN1IERvY2tlciBIdWIgOiAkSFVCX0EiCmVjaG8gInBhc21lci9zdm0tcmF0aW5nOjEuMC4xICAgICBzdSBEb2NrZXIgSHViIDogJEhVQl9CIgplY2hvICItLSB0YWcgZGlzcG9uaWJpbGkgc290dG8gcGFzbWVyL3N2bS1yYXRpbmcgLS0iCmN1cmwgLXNTIC1tIDIwICJodHRwczovL2h1Yi5kb2NrZXIuY29tL3YyL3JlcG9zaXRvcmllcy9wYXNtZXIvc3ZtLXJhdGluZy90YWdzP3BhZ2Vfc2l6ZT0yMCIgfCB0ciAnLCcgJ1xuJyB8IGdyZXAgJyJuYW1lIicgfCBoZWFkIC0yMAplY2hvICItLSB0YWcgZGlzcG9uaWJpbGkgc290dG8gcGFzbWVyL3JhdGluZy1zdm0td2ViIC0tIgpjdXJsIC1zUyAtbSAyMCAiaHR0cHM6Ly9odWIuZG9ja2VyLmNvbS92Mi9yZXBvc2l0b3JpZXMvcGFzbWVyL3JhdGluZy1zdm0td2ViL3RhZ3M/cGFnZV9zaXplPTIwIiB8IHRyICcsJyAnXG4nIHwgZ3JlcCAnIm5hbWUiJyB8IGhlYWQgLTIwCgojIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gMi4gaW1tYWdpbmUgY29ycmV0dGEgbG9jYWxlCmhkciAiMi4gUFJFUEFSQVpJT05FIElNTUFHSU5FIgpUQVJHRVQ9InBhc21lci9yYXRpbmctc3ZtLXdlYjoxLjAuMSIgICAjIG5vbWUgYXR0ZXNvIGRhbCBjb21wb3NlIGluc3RhbGxhdG8KaWYgWyAiJEhVQl9BIiA9ICJTSSIgXTsgdGhlbgogIGVjaG8gIi0+IGlsIG5vbWUgbmVsIGNvbXBvc2UgZXNpc3RlIHN1IEh1YjogZXNlZ3VvIHB1bGwiCiAgZGsgcHVsbCAiJFRBUkdFVCIgMj4mMSB8IHRhaWwgLTUKZWxpZiBkayBpbWFnZSBpbnNwZWN0IHBhc21lci9zdm0tcmF0aW5nOjEuMC4xID4vZGV2L251bGwgMj4mMTsgdGhlbgogIGVjaG8gIi0+IHVzbyBsJ2ltbWFnaW5lIGxvY2FsZSBwYXNtZXIvc3ZtLXJhdGluZzoxLjAuMSBlIGxhIHJpdGFnZ28gY29tZSAkVEFSR0VUIgogIGRrIHRhZyBwYXNtZXIvc3ZtLXJhdGluZzoxLjAuMSAiJFRBUkdFVCIgMj4mMQplbGlmIFsgIiRIVUJfQiIgPSAiU0kiIF07IHRoZW4KICBlY2hvICItPiBzY2FyaWNvIHBhc21lci9zdm0tcmF0aW5nOjEuMC4xIGUgbGEgcml0YWdnbyBjb21lICRUQVJHRVQiCiAgZGsgcHVsbCBwYXNtZXIvc3ZtLXJhdGluZzoxLjAuMSAyPiYxIHwgdGFpbCAtNQogIGRrIHRhZyBwYXNtZXIvc3ZtLXJhdGluZzoxLjAuMSAiJFRBUkdFVCIgMj4mMQplbHNlCiAgZWNobyAiISEgTkVTU1VOQSBJTU1BR0lORSBVVElMSVpaQUJJTEUgVFJPVkFUQSDigJQgbWkgZmVybW8gcXVpLiIKICBlY2hvICIjIyMjIyMjIyMjIEZJTkUgRklYICMjIyMjIyMjIyMiOyBleGl0IDEKZmkKZWNobyAiLS0gaW1tYWdpbmkgJ3JhdGluZ3xzdm0nIG9yYSBwcmVzZW50aSAtLSIKZGsgaW1hZ2VzIDI+JjEgfCBncmVwIC1pRSAncmF0aW5nfHN2bScKCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAzLiBhdnZpbyBkZWxsJ2FwcApoZHIgIjMuIEFWVklPIEFQUCIKZWNobyAiLS0gY29tcG9zZSB1c2F0bzogJENESVIvZG9ja2VyLWNvbXBvc2UueW1sIgpkayBuZXR3b3JrIGluc3BlY3QgdW1icmVsX21haW5fbmV0d29yayA+L2Rldi9udWxsIDI+JjEgfHwgZWNobyAiQVRURU5aSU9ORTogcmV0ZSB1bWJyZWxfbWFpbl9uZXR3b3JrIGFzc2VudGUiCmlmIFsgIiRORUVEU1VETyIgPSAiMCIgXTsgdGhlbgogIChjZCAiJENESVIiICYmIGRvY2tlciBjb21wb3NlIC1wICIkQVBQIiB1cCAtZCAyPiYxIHwgdGFpbCAtMjApCmVsc2UKICBwcmludGYgJyVzXG4nICIkU1VET1BXIiB8IHN1ZG8gLVMgLXAgJycgYmFzaCAtYyAiY2QgJyRDRElSJyAmJiBkb2NrZXIgY29tcG9zZSAtcCAnJEFQUCcgdXAgLWQiIDI+JjEgfCB0YWlsIC0yMApmaQpzbGVlcCA2CmVjaG8gIi0tIHN0YXRvIC0tIgpkayBwcyAtYSAtLWZvcm1hdCAne3suTmFtZXN9fSB8IHt7LlN0YXR1c319IHwge3suUG9ydHN9fSB8IHt7LkltYWdlfX0nIDI+JjEgfCBncmVwIC1pRSAncmF0aW5nfHN2bScgfHwgZWNobyAiY29udGFpbmVyIG5vbiB0cm92YXRvIgplY2hvICItLSBsb2cgKDYwIHJpZ2hlKSAtLSIKZGsgbG9ncyAtLXRhaWwgNjAgIiRDTlQiIDI+JjEKCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSA0LiBOUE0gLyBkb2NrZXItaG9zdApoZHIgIjQuIE5HSU5YIFBST1hZIE1BTkFHRVIiCmVjaG8gIi0tIGxvZyBkb2NrZXItaG9zdCAoNDAgcmlnaGUpIC0tIgpkayBsb2dzIC0tdGFpbCA0MCBuZ2lueC1wcm94eS1tYW5hZ2VyX2RvY2tlci1ob3N0XzEgMj4mMQplY2hvICItLSByaWF2dmlvIGRvY2tlci1ob3N0IC0tIgpkayByZXN0YXJ0IG5naW54LXByb3h5LW1hbmFnZXJfZG9ja2VyLWhvc3RfMSAyPiYxCnNsZWVwIDgKZGsgcHMgLWEgLS1mb3JtYXQgJ3t7Lk5hbWVzfX0gfCB7ey5TdGF0dXN9fScgMj4mMSB8IGdyZXAgLWkgbmdpbngtcHJveHktbWFuYWdlcgplY2hvICItLSBwcm94eSBob3N0IGNvbmZpZ3VyYXRpIGluIE5QTSAtLSIKZGsgZXhlYyBuZ2lueC1wcm94eS1tYW5hZ2VyX3dlYl8xIHNoIC1jICJscyAvZGF0YS9uZ2lueC9wcm94eV9ob3N0LyAyPi9kZXYvbnVsbCAmJiBncmVwIC1sIC1yICdzdm0nIC9kYXRhL25naW54L3Byb3h5X2hvc3QvIDI+L2Rldi9udWxsIHwgaGVhZCAtNSIgMj4mMSB8IGhlYWQgLTMwCmVjaG8gIi0tIHJlZ29sYSBOUE0gY2hlIGNvbnRpZW5lICdzdm0nIC0tIgpkayBleGVjIG5naW54LXByb3h5LW1hbmFnZXJfd2ViXzEgc2ggLWMgImdyZXAgLXIgLUE2IC1CMiAnc3ZtXC5tZXJlbGxhXC5pdCcgL2RhdGEvbmdpbngvcHJveHlfaG9zdC8gMj4vZGV2L251bGwgfCBoZWFkIC00MCIgMj4mMSB8IGhlYWQgLTQwCgojIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSA1LiB2ZXJpZmljaGUKaGRyICI1LiBWRVJJRklDSEUiCmVjaG8gIi0tIHBvcnRlIGluIGFzY29sdG8gLS0iCihzcyAtdGxucCAyPi9kZXYvbnVsbCB8fCBwcmludGYgJyVzXG4nICIkU1VET1BXIiB8IHN1ZG8gLVMgLXAgJycgc3MgLXRsbnAgMj4vZGV2L251bGwpIHwgZ3JlcCAtRSAnOig4MDAwfDQwMDgwfDQwNDQzKSAnCmVjaG8gIi0tIGN1cmwgMTI3LjAuMC4xOjgwMDAgLS0iCmN1cmwgLXNTIC1vIC9kZXYvbnVsbCAtdyAnaHR0cF9jb2RlPSV7aHR0cF9jb2RlfSB0aW1lPSV7dGltZV90b3RhbH1zXG4nIC1tIDEwIGh0dHA6Ly8xMjcuMC4wLjE6ODAwMC8gMj4mMQplY2hvICItLSBjdXJsIDE5Mi4xNjguMS4xMTI6ODAwMCAtLSIKY3VybCAtc1MgLW8gL2Rldi9udWxsIC13ICdodHRwX2NvZGU9JXtodHRwX2NvZGV9IHRpbWU9JXt0aW1lX3RvdGFsfXNcbicgLW0gMTAgaHR0cDovLzE5Mi4xNjguMS4xMTI6ODAwMC8gMj4mMQplY2hvICItLSBETlMgc3ZtLm1lcmVsbGEuaXQgLS0iCihnZXRlbnQgaG9zdHMgc3ZtLm1lcmVsbGEuaXQgfHwgbnNsb29rdXAgc3ZtLm1lcmVsbGEuaXQgMj4mMSB8IHRhaWwgLTYpIDI+JjEKZWNobyAiLS0gY3VybCBodHRwczovL3N2bS5tZXJlbGxhLml0IC0tIgpjdXJsIC1zUyAtbyAvZGV2L251bGwgLXcgJ2h0dHBfY29kZT0le2h0dHBfY29kZX0gdGltZT0le3RpbWVfdG90YWx9c1xuJyAtbSAyMCBodHRwczovL3N2bS5tZXJlbGxhLml0LyAyPiYxCgplY2hvCmVjaG8gIiMjIyMjIyMjIyMgRklORSBGSVggIyMjIyMjIyMjIyI= | base64 -d > /tmp/svm_fix.sh; bash /tmp/svm_fix.sh; rm -f /tmp/svm_fix.sh
+=== FIX axehero-rating-svm-web  (Wed Aug 12 20:43:50 UTC 2026) ===
+
+########## 1. VERIFICA NOMI SU DOCKER HUB ##########
+pasmer/rating-svm-web:1.0.1 su Docker Hub : NO
+pasmer/svm-rating:1.0.1     su Docker Hub : NO
+-- tag disponibili sotto pasmer/svm-rating --
+-- tag disponibili sotto pasmer/rating-svm-web --
+
+########## 2. PREPARAZIONE IMMAGINE ##########
+-> uso l'immagine locale pasmer/svm-rating:1.0.1 e la ritaggo come pasmer/rating-svm-web:1.0.1
+-- immagini 'rating|svm' ora presenti --
+pasmer/rating-svm-web                           1.0.1                          b21af8468376   7 months ago    513MB
+pasmer/svm-rating                               1.0.1                          b21af8468376   7 months ago    513MB
+
+########## 3. AVVIO APP ##########
+-- compose usato: /home/umbrel/umbrel/app-data/axehero-rating-svm-web/docker-compose.yml
+time="2026-08-12T20:43:52Z" level=warning msg="/home/umbrel/umbrel/app-data/axehero-rating-svm-web/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Container rating-svm-web Creating 
+ Container rating-svm-web Created 
+ Container rating-svm-web Starting 
+ Container rating-svm-web Started 
+-- stato --
+rating-svm-web | Up 6 seconds | 0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp | pasmer/rating-svm-web:1.0.1
+-- log (60 righe) --
+/usr/local/lib/python3.12/site-packages/sklearn/base.py:463: InconsistentVersionWarning: Trying to unpickle estimator StandardScaler from version 1.2.2 when using version 1.8.0. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/usr/local/lib/python3.12/site-packages/sklearn/base.py:463: InconsistentVersionWarning: Trying to unpickle estimator SVC from version 1.2.2 when using version 1.8.0. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/usr/local/lib/python3.12/site-packages/sklearn/base.py:463: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.2.2 when using version 1.8.0. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
+########## 4. NGINX PROXY MANAGER ##########
+-- log docker-host (40 righe) --
+Docker Host: 10.21.0.1 (default gateway)
+Forwarding ports: 1-65535
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+iptables v1.8.10 (legacy): can't initialize iptables table `nat': Table does not exist (do you need to insmod?)
+Perhaps iptables or your kernel needs to be upgraded.
+Docker Host: 10.21.0.1 (default gateway)
+Forwarding ports: 1-65535
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+iptables v1.8.10 (legacy): can't initialize iptables table `nat': Table does not exist (do you need to insmod?)
+Perhaps iptables or your kernel needs to be upgraded.
+Docker Host: 10.21.0.1 (default gateway)
+Forwarding ports: 1-65535
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+iptables v1.8.10 (legacy): can't initialize iptables table `nat': Table does not exist (do you need to insmod?)
+Perhaps iptables or your kernel needs to be upgraded.
+Docker Host: 10.21.0.1 (default gateway)
+Forwarding ports: 1-65535
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+iptables v1.8.10 (legacy): can't initialize iptables table `nat': Table does not exist (do you need to insmod?)
+Perhaps iptables or your kernel needs to be upgraded.
+Docker Host: 10.21.0.1 (default gateway)
+Forwarding ports: 1-65535
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+modprobe: can't change directory to '/lib/modules': No such file or directory
+iptables v1.8.10 (legacy): can't initialize iptables table `nat': Table does not exist (do you need to insmod?)
+Perhaps iptables or your kernel needs to be upgraded.
+-- riavvio docker-host --
+nginx-proxy-manager_docker-host_1
+nginx-proxy-manager_docker-host_1 | Restarting (3) Less than a second ago
+nginx-proxy-manager_web_1 | Up 6 hours
+nginx-proxy-manager_app_proxy_1 | Up 6 hours
+-- proxy host configurati in NPM --
+1.conf
+10.conf
+11.conf
+12.conf
+15.conf
+16.conf
+17.conf
+18.conf
+2.conf
+3.conf
+5.conf
+7.conf
+/data/nginx/proxy_host/17.conf
+-- regola NPM che contiene 'svm' --
+/data/nginx/proxy_host/17.conf-# ------------------------------------------------------------
+/data/nginx/proxy_host/17.conf:# svm.merella.it
+/data/nginx/proxy_host/17.conf-# ------------------------------------------------------------
+/data/nginx/proxy_host/17.conf-
+/data/nginx/proxy_host/17.conf-
+/data/nginx/proxy_host/17.conf-
+/data/nginx/proxy_host/17.conf-map $scheme $hsts_header {
+/data/nginx/proxy_host/17.conf-    https   "max-age=63072000; preload";
+--
+/data/nginx/proxy_host/17.conf-
+/data/nginx/proxy_host/17.conf-
+/data/nginx/proxy_host/17.conf:  server_name svm.merella.it;
+/data/nginx/proxy_host/17.conf-http2 off;
+/data/nginx/proxy_host/17.conf-
+/data/nginx/proxy_host/17.conf-
+/data/nginx/proxy_host/17.conf-  # Let's Encrypt SSL
+/data/nginx/proxy_host/17.conf-  include conf.d/include/letsencrypt-acme-challenge.conf;
+/data/nginx/proxy_host/17.conf-  include conf.d/include/ssl-cache.conf;
+
+########## 5. VERIFICHE ##########
+-- porte in ascolto --
+LISTEN 0      4096                       0.0.0.0:40443      0.0.0.0:*          
+LISTEN 0      4096                       0.0.0.0:40080      0.0.0.0:*          
+LISTEN 0      4096                       0.0.0.0:8000       0.0.0.0:*          
+LISTEN 0      4096                          [::]:40443         [::]:*          
+LISTEN 0      4096                          [::]:40080         [::]:*          
+LISTEN 0      4096                          [::]:8000          [::]:*          
+-- curl 127.0.0.1:8000 --
+http_code=200 time=0.030723s
+-- curl 192.168.1.112:8000 --
+http_code=200 time=0.002413s
+-- DNS svm.merella.it --
+2606:4700:3034::ac43:8d14 svm.merella.it
+2606:4700:3032::6815:46fa svm.merella.it
+-- curl https://svm.merella.it --
+http_code=200 time=0.184842s
+
+########## FINE FIX ##########

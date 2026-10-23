@@ -1,12 +1,22 @@
-version: "3.8"
-
 services:
   rating-svm-web:
+    # ATTENZIONE — nessuna delle due varianti di questo nome risulta scaricabile
+    # da Docker Hub in modo anonimo (2026-08-12):
+    #   pasmer/rating-svm-web:1.0.1 -> non risolvibile
+    #   pasmer/svm-rating:1.0.1     -> non risolvibile
+    # L'immagine esiste SOLO nella cache Docker dell'UmbrelOS (id b21af8468376),
+    # dove e' stata ritaggata da pasmer/svm-rating:1.0.1 a questo nome.
+    # Finche' non viene pubblicata (o resa accessibile) su un registry, l'app
+    # non e' reinstallabile da zero su un altro host. Vedi README/TO DO.
     image: pasmer/rating-svm-web:1.0.1
+    # Usa l'immagine locale se presente e non tentare il pull a ogni avvio:
+    # senza questo, un registry irraggiungibile impedisce all'app di ripartire
+    # dopo un riavvio del Pi (e' esattamente il guasto del 2026-08-12).
+    pull_policy: missing
     container_name: rating-svm-web
     restart: unless-stopped
     ports:
-      - "8000:8000" # riesponi le porte
+      - "8000:8000"
     environment:
       - APP_PROXY=false
     networks:
