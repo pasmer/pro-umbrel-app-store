@@ -22,6 +22,7 @@ defaultUsername: ""
 defaultPassword: ""
 dependencies: []
 permissions: []
+gallery: []
 releaseNotes: >-
   Prima versione Umbrel. Importa il pacchetto dalla rete locale al primo avvio
   e conserva data/user sotto APP_DATA_DIR.
