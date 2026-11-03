@@ -1,0 +1,65 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: axehero-ai-os-dashboard_dashboard_1
+      APP_PORT: 3000
+
+  dashboard:
+    image: python:3.12-slim
+    restart: unless-stopped
+    init: true
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - ${APP_DATA_DIR}:/data
+    command:
+      - /bin/sh
+      - -ec
+      - |
+        if [ ! -f /data/source/server.py ]; then
+          python -c "import io,urllib.request,zipfile; zipfile.ZipFile(io.BytesIO(urllib.request.urlopen('http://192.168.1.242:18776/AI-OS-Dashboard-Current-1.1.1.zip', timeout=120).read())).extractall('/tmp/ai-os-extract')"
+          mkdir -p /data
+          mv /tmp/ai-os-extract/AI-OS-Dashboard-Current-1.1.1 /data/source
+        fi
+        mkdir -p /data/user
+        if [ ! -L /data/source/data/user ]; then ln -s /data/user /data/source/data/user; fi
+        cd /data/source
+        python server.py --no-open --port 18775 &
+        cat > /tmp/umbrel-gateway.py <<'PY'
+        from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+        from http.client import HTTPConnection
+        class Gateway(BaseHTTPRequestHandler):
+            def do_GET(self):
+                headers = {k: v for k, v in self.headers.items() if k.lower() not in {'host', 'origin', 'connection', 'accept-encoding'}}
+                headers['Host'] = '127.0.0.1:18775'
+                if 'Origin' in self.headers:
+                    headers['Origin'] = 'http://127.0.0.1:18775'
+                if 'Sec-Fetch-Site' in self.headers:
+                    headers['Sec-Fetch-Site'] = 'same-origin'
+                upstream = HTTPConnection('127.0.0.1', 18775, timeout=30)
+                upstream.request('GET', self.path, headers=headers)
+                response = upstream.getresponse()
+                body = response.read()
+                self.send_response(response.status)
+                for key, value in response.getheaders():
+                    if key.lower() not in {'connection', 'transfer-encoding', 'server', 'date'}:
+                        self.send_header(key, value)
+                self.end_headers()
+                self.wfile.write(body)
+                upstream.close()
+
+            def log_message(self, format, *args):
+                pass
+
+        ThreadingHTTPServer(('0.0.0.0', 3000), Gateway).serve_forever()
+        PY
+        exec python /tmp/umbrel-gateway.py
+    networks:
+      - umbrel_main_network
+
+networks:
+  umbrel_main_network:
+    external: true
