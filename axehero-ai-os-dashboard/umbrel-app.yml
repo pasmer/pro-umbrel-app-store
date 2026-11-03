@@ -1,0 +1,27 @@
+manifestVersion: 1
+id: axehero-ai-os-dashboard
+category: AI
+name: AI OS Dashboard
+version: "1.1.1-umbrel1"
+tagline: Dashboard AI OS personale sulla rete domestica
+description: >-
+  Dashboard locale e in sola lettura per consultare il grafo e i file di esempio
+  di AI OS. Il pacchetto ZIP resta sul Mac dell'utente e viene trasferito
+  all'Umbrel solo al primo avvio sulla rete domestica. I dati utente restano
+  in APP_DATA_DIR.
+developer: Pav Rusovs
+website: https://github.com/pasmer/AI-OS-Dashboard-Current-1.1.1
+repo: https://github.com/pasmer/AI-OS-Dashboard-Current-1.1.1
+support: https://github.com/pasmer/AI-OS-Dashboard-Current-1.1.1/issues
+submitter: pasmer
+submission: https://github.com/pasmer/pro-umbrel-app-store
+port: 18775
+path: ""
+icon: https://raw.githubusercontent.com/pasmer/pro-umbrel-app-store/master/axehero-ai-os-dashboard/icon.svg
+defaultUsername: ""
+defaultPassword: ""
+dependencies: []
+permissions: []
+releaseNotes: >-
+  Prima versione Umbrel. Importa il pacchetto dalla rete locale al primo avvio
+  e conserva data/user sotto APP_DATA_DIR.
