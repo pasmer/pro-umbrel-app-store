@@ -16,7 +16,7 @@ services:
       - ${APP_DATA_DIR}:/appdata
 
   whatsapplist:
-    image: pasmer/whatsapplist:1.1.1
+    image: pasmer/whatsapplist:1.2.0
     container_name: whatsapplist
     user: "1000:1000"
     restart: unless-stopped
