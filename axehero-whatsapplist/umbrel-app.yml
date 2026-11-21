@@ -2,7 +2,7 @@ manifestVersion: 1
 id: axehero-whatsapplist
 category: communication
 name: WhatsappList
-version: "1.1.1"
+version: "1.2.0"
 tagline: Invio massivo di messaggi WhatsApp con CSV
 description: >-
   WhatsappList è un'applicazione per l'invio massivo di messaggi WhatsApp.
@@ -21,7 +21,7 @@ description: >-
   - Supporto multi-architettura per Chromium/Puppeteer
 
 releaseNotes: >-
-  Aggiornamento alla versione 1.1.1:
+  Aggiornamento alla versione 1.2.0.
 
   - Fix redirect di WhatsApp Web su /login/ (pulizia mirata del cookie wa_ul) che causava timeout e stato "Disconnesso" al primo accesso
   - Stato UI migliorato con indicazione "Inizializzazione in corso..." e dettaglio di eventuali errori di avvio
