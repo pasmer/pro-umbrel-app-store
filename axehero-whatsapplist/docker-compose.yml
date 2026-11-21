@@ -1,19 +1,39 @@
 version: '3.8'
 
 services:
+  init:
+    image: alpine:3.21
+    user: "0:0"
+    restart: "no"
+    command:
+      - /bin/sh
+      - -ec
+      - |
+        mkdir -p /appdata/wwebjs_auth /appdata/uploads /appdata/reports
+        chown -R 1000:1000 /appdata/wwebjs_auth /appdata/uploads /appdata/reports
+        chmod 0755 /appdata/wwebjs_auth /appdata/uploads /appdata/reports
+    volumes:
+      - ${APP_DATA_DIR}:/appdata
+
   whatsapplist:
-    image: pasmer/whatsapplist:latest
+    image: pasmer/whatsapplist:1.1.0
     container_name: whatsapplist
     user: "1000:1000"
     init: true
     restart: unless-stopped
+    stop_grace_period: 30s
+    depends_on:
+      init:
+        condition: service_completed_successfully
     ports:
       - "7676:7676"
     volumes:
       # Persistenza sessione WhatsApp
       - ${APP_DATA_DIR}/wwebjs_auth:/app/.wwebjs_auth
-      # Persistenza dei CSV caricati
+      # Persistenza dei CSV caricati e immagini campagna
       - ${APP_DATA_DIR}/uploads:/app/uploads
+      # Persistenza dei report CSV di invio falliti
+      - ${APP_DATA_DIR}/reports:/app/reports
     environment:
       - NODE_ENV=production
       - PORT=7676
