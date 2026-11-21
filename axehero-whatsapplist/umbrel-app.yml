@@ -2,7 +2,7 @@ manifestVersion: 1
 id: axehero-whatsapplist
 category: communication
 name: WhatsappList
-version: "1.1.0"
+version: "1.1.1"
 tagline: Invio massivo di messaggi WhatsApp con CSV
 description: >-
   WhatsappList è un'applicazione per l'invio massivo di messaggi WhatsApp.
@@ -21,13 +21,13 @@ description: >-
   - Supporto multi-architettura per Chromium/Puppeteer
 
 releaseNotes: >-
-  Aggiornamento alla versione 1.1.0:
+  Aggiornamento alla versione 1.1.1:
 
-  - Aggiornamento a whatsapp-web.js 1.34.8, Puppeteer 24 e Node.js 22 Alpine (risolve l'incompatibilità con WhatsApp Web)
-  - Immagine Docker multi-architettura (linux/arm64 e linux/amd64)
-  - Fix mappatura manuale colonna telefono e passaggio della colonna selezionata durante l'invio massivo
-  - Preservazione corretta del formato immagine caricato (PNG, JPEG, GIF, WebP)
-  - Gestione affidabile dei retry, shutdown pulito e persistenza della cartella reports/ con permessi automatici 1000:1000
+  - Fix redirect di WhatsApp Web su /login/ (pulizia mirata del cookie wa_ul) che causava timeout e stato "Disconnesso" al primo accesso
+  - Stato UI migliorato con indicazione "Inizializzazione in corso..." e dettaglio di eventuali errori di avvio
+  - Timeout di autenticazione aumentato a 45s per host ARM64
+  - Rimozione automatica di eventuali lock Chromium residui (SingletonLock) in caso di riavvio o aggiornamento del container
+  - Rimozione del doppio init/tini dal docker-compose (tini eseguito correttamente come PID 1)
 
 dependencies: []
 
